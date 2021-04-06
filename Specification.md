@@ -6,8 +6,7 @@ https://github.com/AdrianBrambila/CMPE131Team6
 
 Adrian Brambila  --  AdrianBrambila
 
-
-
+Adrian Perez -- Adrian-Perez-98
 
 **Product Name**
 
@@ -15,6 +14,10 @@ Adrian Brambila  --  AdrianBrambila
 
 **Use Cases**
 
-
-
+- Login
+- Add new list
+- Add task
+- Share tasks
+- Mark tasks depending on completion
+- Priority
 
