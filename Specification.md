@@ -10,6 +10,8 @@ Adrian Perez -- Adrian-Perez-98
 
 Mohibkhan Pathan -- Mohib1402
 
+Dennis Vu -- ddot159
+
 **Product Name**
 
 Taskr - A Task Manager
@@ -36,6 +38,18 @@ Taskr - A Task Manager
 	- User should be able to change the color and style of certain tasks to make them more visible or highlght importance
 - Mobile Version
 	- User should have a usable experiance using the task manager on a mobile device
+- inbox
+  - Users should have a place to find their tasks and to do lists
+- calender 
+  - Users should be able to assign due dates to a calendar
+- filtering
+  - Users should be able to filter out and group tasks. For example, maybe tasks with urgency due within the next day or week.
+- notifications
+  - Users should be able to set notifications to appear on their phones, inboxes, etc.
+- Viewing function
+  - Users should be able to click on their tasks or to-do lists and view additional info about them.
+
+
 
 
 **Non-functional Requirements**
