@@ -62,3 +62,8 @@ Taskr - A Task Manager
 - Home page that contains all lists created by user.
 - List page that shows you all the items in specific lists.
 
+
+
+
+
+![TarkrUMLPNG](C:\Users\Adrian\Documents\CMPE131Team6\TarkrUMLPNG.PNG)
