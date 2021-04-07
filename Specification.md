@@ -28,6 +28,11 @@ Mohibkhan Pathan -- Mohib1402
   - Users should have the option to update the status of a their lists/items depending on how complete they are (ex: complete flag, not complete flag). 
 - Priority Markers
   - User should be able to to set tasks with different prioties (ex: urgent - not urgent)
+- Searching 
+  - User should be able to search for a particular thing/item.
+- Should have a Navbar
+  - Users should be able to switch between the pages with the help of a bar at the top with links to the different pages(Home, About, Contact Us).
+
 
 **Non-functional Requirements**
 
