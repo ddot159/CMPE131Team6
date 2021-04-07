@@ -12,7 +12,7 @@ Mohibkhan Pathan -- Mohib1402
 
 **Product Name**
 
-
+Taskr - A Task Manager
 
 **Use Cases**
 
@@ -32,6 +32,10 @@ Mohibkhan Pathan -- Mohib1402
   - User should be able to search for a particular thing/item.
 - Should have a Navbar
   - Users should be able to switch between the pages with the help of a bar at the top with links to the different pages(Home, About, Contact Us).
+- Ability to add color and formatting like bold and underline
+	- User should be able to change the color and style of certain tasks to make them more visible or highlght importance
+- Mobile Version
+	- User should have a usable experiance using the task manager on a mobile device
 
 
 **Non-functional Requirements**
