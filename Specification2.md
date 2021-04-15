@@ -1,97 +1,30 @@
+# **Github Repository Link**
+
+https://github.com/AdrianBrambila/CMPE131Team6
+
+
+
+# **Group Members**
+
+Adrian Brambila  --  AdrianBrambila
+
+Adrian Perez -- Adrian-Perez-98
+
+Mohibkhan Pathan -- Mohib1402
+
+Dennis Vu -- ddot159
+
+
+
 # Use Case Description
 
-**Product Name:**
+**Product Name:**  Taskr - A Task Manager
 
 **Problem Statement:**
 
 
 
-
-**Use Case Name:**
-
-**Date:**
-
- 
-
-## Summary
-
-write summary here
-
- 
-
-## Actors
-
-actor 1
-actor 2
-….
-
-
-## Preconditions
-
-* precond 1
-
-* precond 2
-
-* ….
-
- 
-
-## Triggers
-
-Explain trigger here
-
- 
-
-## Primary Sequence
-
-step 1 action
-step 2 action
-etc
-
-
-## Primary Postconditions
-
-* postcondition
-
-* postcondition
-
-* etc
-
- 
-
-## Alternate Sequences
-
-Only if you have alt seq
-
-* Step 1 alt. seq.
-
-* step 2 alt. seq.
-
-* etc
-
- 
-
-### Alternate Trigger
-
-### Alternate Postconditions
-
- 
-
-## Non-functional Requirements
-
- 
-
-## Glossary
-
-
-
-
-
-
-
-
-
-**Use Case Name:**
+**Use Case Name:**   Login
 
 **Date:**
 
@@ -175,7 +108,7 @@ Only if you have alt seq
 
 
 
-**Use Case Name:**
+**Use Case Name:**  Add new list/Remove an old list
 
 **Date:**
 
@@ -259,7 +192,7 @@ Only if you have alt seq
 
 
 
-**Use Case Name:**
+**Use Case Name:**  Add/Remove item to list
 
 **Date:**
 
@@ -343,7 +276,7 @@ Only if you have alt seq
 
 
 
-**Use Case Name:**
+**Use Case Name:**  Share Completions of list to other users
 
 **Date:**
 
@@ -427,7 +360,7 @@ Only if you have alt seq
 
 
 
-**Use Case Name:**
+**Use Case Name:**  Mark items depending on completion
 
 **Date:**
 
@@ -511,7 +444,7 @@ Only if you have alt seq
 
 
 
-**Use Case Name:**
+**Use Case Name:**   Priority Markers
 
 **Date:**
 
@@ -595,7 +528,7 @@ Only if you have alt seq
 
 
 
-**Use Case Name:**
+**Use Case Name:**  Searching 
 
 **Date:**
 
@@ -679,7 +612,7 @@ Only if you have alt seq
 
 
 
-**Use Case Name:**
+**Use Case Name: ** Navbar
 
 **Date:**
 
@@ -763,7 +696,89 @@ Only if you have alt seq
 
 
 
-**Use Case Name:**
+**Use Case Name:** Formatting and color options
+
+**Date:**
+
+ 
+
+## Summary
+
+Allow users the ability to add color and formatting like bold, underline and italics to make certain tasks more visible or highlight importance 
+
+## Actors
+
+actor 1 = User
+
+
+
+
+## Preconditions
+
+* Already logged in
+
+* Already made a new task
+
+  
+
+ 
+
+## Triggers
+
+Explain trigger here
+
+ 
+
+## Primary Sequence
+
+step 1 action
+step 2 action
+etc
+
+
+## Primary Postconditions
+
+* postcondition
+
+* postcondition
+
+* etc
+
+ 
+
+## Alternate Sequences
+
+Only if you have alt seq
+
+* Step 1 alt. seq.
+
+* step 2 alt. seq.
+
+* etc
+
+ 
+
+### Alternate Trigger
+
+### Alternate Postconditions
+
+ 
+
+## Non-functional Requirements
+
+ 
+
+## Glossary
+
+
+
+
+
+
+
+
+
+**Use Case Name:**  Mobile Version
 
 **Date:**
 
@@ -847,7 +862,7 @@ Only if you have alt seq
 
 
 
-**Use Case Name:**
+**Use Case Name:** Inbox
 
 **Date:**
 
@@ -931,7 +946,7 @@ Only if you have alt seq
 
 
 
-**Use Case Name:**
+**Use Case Name:** Calendar
 
 **Date:**
 
@@ -1015,7 +1030,7 @@ Only if you have alt seq
 
 
 
-**Use Case Name:**
+**Use Case Name: **Filtering
 
 **Date:**
 
@@ -1099,7 +1114,7 @@ Only if you have alt seq
 
 
 
-**Use Case Name:**
+**Use Case Name:** Notifications 
 
 **Date:**
 
@@ -1183,7 +1198,7 @@ Only if you have alt seq
 
 
 
-**Use Case Name:**
+**Use Case Name:** Viewing Function
 
 **Date:**
 
@@ -1265,7 +1280,7 @@ Only if you have alt seq
 
 
 
-**Use Case Name:**
+**Use Case Name:** Logout Button
 
 **Date:**
 
