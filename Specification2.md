@@ -20,79 +20,58 @@ Dennis Vu -- ddot159
 
 **Product Name:**  Taskr - A Task Manager
 
-**Problem Statement:**
+**Problem Statement:** Create a web browser application for managing tasks.
 
 
 
 **Use Case Name:**   Login
 
-**Date:**
-
- 
+**Date:** 4/15/21 
 
 ## Summary
 
-write summary here
-
- 
+User must be able to login into the software with a username and unique password. Sign up/Login should be handled with checks to make sure the input is correct. 
 
 ## Actors
 
-actor 1
-actor 2
-….
+actor 1 = User
 
 
 ## Preconditions
 
-* precond 1
-
-* precond 2
-
-* ….
-
- 
+* Username
+* Password
 
 ## Triggers
 
-Explain trigger here
-
- 
+Submit trigger will submit the input and allow user with correct username and password proceed into the web app.
 
 ## Primary Sequence
 
-step 1 action
-step 2 action
-etc
+step 1 enter username
+step 2 enter password
+step 3 submit credentials
 
 
 ## Primary Postconditions
 
-* postcondition
+* none 
 
-* postcondition
-
-* etc
-
- 
 
 ## Alternate Sequences
 
-Only if you have alt seq
+* Step 1 Click on forgot password
 
-* Step 1 alt. seq.
+* step 2 Enter email to reset password
 
-* step 2 alt. seq.
-
-* etc
-
- 
 
 ### Alternate Trigger
 
+- Forgot password
+
 ### Alternate Postconditions
 
- 
+- Must half email associated with user
 
 ## Non-functional Requirements
 
@@ -110,69 +89,46 @@ Only if you have alt seq
 
 **Use Case Name:**  Add new list/Remove an old list
 
-**Date:**
-
- 
+**Date:** 4/15/21 
 
 ## Summary
 
-write summary here
-
- 
+User should be able to add a new list of ToDo's. There should be a option to title these lists (ex: Goals, Shopping list, Dinner options, etc.).  
 
 ## Actors
 
-actor 1
-actor 2
-….
+actor 1 = User
 
 
 ## Preconditions
 
-* precond 1
-
-* precond 2
-
-* ….
-
- 
+* Must be signed in
+* In the home menu 
 
 ## Triggers
 
-Explain trigger here
-
- 
+You must click on a '+' button and name the new title. In order to remove you must click on the '-' next to a list to remove it.
 
 ## Primary Sequence
 
-step 1 action
-step 2 action
-etc
+step 1 click '+'
+step 2 type name into box
+step 3 click add
 
 
 ## Primary Postconditions
 
-* postcondition
+* none
 
-* postcondition
-
-* etc
-
- 
 
 ## Alternate Sequences
 
-Only if you have alt seq
+* Step 1 click '-'
 
-* Step 1 alt. seq.
-
-* step 2 alt. seq.
-
-* etc
-
- 
 
 ### Alternate Trigger
+
+'-' to delete a list
 
 ### Alternate Postconditions
 
@@ -194,69 +150,48 @@ Only if you have alt seq
 
 **Use Case Name:**  Add/Remove item to list
 
-**Date:**
-
- 
+**Date:** 4/15/21 
 
 ## Summary
 
-write summary here
-
- 
+User should be able to add and remove items with ease. (ex: + and - buttons would be fast and effecient). 
 
 ## Actors
 
-actor 1
-actor 2
-….
+actor 1 = User
 
 
 ## Preconditions
 
-* precond 1
+* Must be signed in
 
-* precond 2
+* Must be inside a list 
 
-* ….
-
- 
 
 ## Triggers
 
-Explain trigger here
-
- 
+You must click on a '+' button and name the new title. In order to remove you must click on the '-' next to a task to remove it.
 
 ## Primary Sequence
 
-step 1 action
-step 2 action
-etc
+step 1 click '+'
+step 2 type name of task into box
+step 3 click add
 
 
 ## Primary Postconditions
 
-* postcondition
+* none
 
-* postcondition
-
-* etc
-
- 
 
 ## Alternate Sequences
 
-Only if you have alt seq
+* Step 1 Step 1 click '-' 
 
-* Step 1 alt. seq.
-
-* step 2 alt. seq.
-
-* etc
-
- 
 
 ### Alternate Trigger
+
+'-' to delete a task
 
 ### Alternate Postconditions
 
@@ -278,67 +213,36 @@ Only if you have alt seq
 
 **Use Case Name:**  Share Completions of list to other users
 
-**Date:**
-
- 
+**Date:** 4/15/21 
 
 ## Summary
 
-write summary here
-
- 
+Users Should be able to share the state of their ToDo's list with other users  
 
 ## Actors
 
-actor 1
-actor 2
-….
+actor 1 = User
 
 
 ## Preconditions
 
-* precond 1
-
-* precond 2
-
-* ….
-
- 
+- Must have a list able to share
 
 ## Triggers
 
-Explain trigger here
-
- 
+Share button that allows user to share list with another user
 
 ## Primary Sequence
 
-step 1 action
-step 2 action
-etc
+step 1 click share 
+step 2 input user to share to
 
 
 ## Primary Postconditions
 
-* postcondition
+* none
 
-* postcondition
-
-* etc
-
- 
-
-## Alternate Sequences
-
-Only if you have alt seq
-
-* Step 1 alt. seq.
-
-* step 2 alt. seq.
-
-* etc
-
- 
+## Alternate Sequences 
 
 ### Alternate Trigger
 
@@ -362,67 +266,36 @@ Only if you have alt seq
 
 **Use Case Name:**  Mark items depending on completion
 
-**Date:**
-
- 
+**Date:** 4/15/21 
 
 ## Summary
 
-write summary here
-
- 
+Users should have the option to update the status of a their lists/items depending on how complete they are (ex: complete flag, not complete flag). 
 
 ## Actors
 
-actor 1
-actor 2
-….
+actor 1 = User
 
 
 ## Preconditions
 
-* precond 1
-
-* precond 2
-
-* ….
-
- 
+* Must have list
+* Must have a task added to a list already
 
 ## Triggers
 
-Explain trigger here
-
- 
+Drop down list to mark the status of the task 
 
 ## Primary Sequence
 
-step 1 action
-step 2 action
-etc
-
+step 1 select drop down
+step 2 choose status
 
 ## Primary Postconditions
 
-* postcondition
+- none
 
-* postcondition
-
-* etc
-
- 
-
-## Alternate Sequences
-
-Only if you have alt seq
-
-* Step 1 alt. seq.
-
-* step 2 alt. seq.
-
-* etc
-
- 
+## Alternate Sequences 
 
 ### Alternate Trigger
 
@@ -446,67 +319,38 @@ Only if you have alt seq
 
 **Use Case Name:**   Priority Markers
 
-**Date:**
-
- 
+**Date:** 4/15/21 
 
 ## Summary
 
-write summary here
-
- 
+User should be able to to set tasks with different prioties (ex: urgent - not urgent)
 
 ## Actors
 
-actor 1
-actor 2
-….
+actor 1 = User 
 
 
 ## Preconditions
 
-* precond 1
-
-* precond 2
-
-* ….
-
- 
+* Must have a list
+* Must have a task added to a list already 
 
 ## Triggers
 
-Explain trigger here
-
- 
+Option on task to change the color to flag the task 
 
 ## Primary Sequence
 
-step 1 action
-step 2 action
-etc
+step 1 Click on task
+step 2 options to set priority
 
 
 ## Primary Postconditions
 
-* postcondition
+* none 
 
-* postcondition
 
-* etc
-
- 
-
-## Alternate Sequences
-
-Only if you have alt seq
-
-* Step 1 alt. seq.
-
-* step 2 alt. seq.
-
-* etc
-
- 
+## Alternate Sequences 
 
 ### Alternate Trigger
 
