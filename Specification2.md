@@ -542,7 +542,7 @@ Only if you have alt seq
 
 **Use Case Name:** Formatting and color options
 
-**Date:**
+**Date:**  4/15/2021
 
  
 
@@ -569,24 +569,18 @@ actor 1 = User
 
 ## Triggers
 
-Explain trigger here
-
- 
+When certain portions of text are highlighted, a formatting menu appears with options.
 
 ## Primary Sequence
 
-step 1 action
-step 2 action
-etc
+step 1) Highlight text
+step 2) Select formatting wanted
 
 
 ## Primary Postconditions
 
-* postcondition
+* n/a
 
-* postcondition
-
-* etc
 
  
 
@@ -622,73 +616,45 @@ Only if you have alt seq
 
 
 
-**Use Case Name:**  Mobile Version
+**Use Case Name:**  Usable Mobile Version
 
-**Date:**
+**Date:** 4/15/2021
 
  
 
 ## Summary
 
-write summary here
-
- 
+Allow user to have access to a usable mobile version, not losing main functionality of the app when accessed on a mobile device. 
 
 ## Actors
 
-actor 1
-actor 2
-….
+actor 1= User
+
 
 
 ## Preconditions
 
-* precond 1
+* n/a
 
-* precond 2
-
-* ….
 
  
 
 ## Triggers
 
-Explain trigger here
-
- 
+When site is accessed on a mobile device, should launch a useable version 
 
 ## Primary Sequence
 
-step 1 action
-step 2 action
-etc
+step 1) Open site on mobile device
 
 
 ## Primary Postconditions
 
-* postcondition
-
-* postcondition
-
-* etc
+ 
 
  
 
-## Alternate Sequences
-
-Only if you have alt seq
-
-* Step 1 alt. seq.
-
-* step 2 alt. seq.
-
-* etc
-
- 
-
-### Alternate Trigger
-
-### Alternate Postconditions
+### 
 
  
 
