@@ -26,11 +26,11 @@ Dennis Vu -- ddot159
 
 **Use Case Name:**   Login
 
-**Date:** 4/15/21 
+**Date:** 4/15/21
 
 ## Summary
 
-User must be able to login into the software with a username and unique password. Sign up/Login should be handled with checks to make sure the input is correct. 
+User must be able to login into the software with a username and unique password. Sign up/Login should be handled with checks to make sure the input is correct.
 
 ## Actors
 
@@ -55,7 +55,7 @@ step 3 submit credentials
 
 ## Primary Postconditions
 
-* none 
+* none
 
 
 ## Alternate Sequences
@@ -75,7 +75,7 @@ step 3 submit credentials
 
 ## Non-functional Requirements
 
- 
+
 
 ## Glossary
 
@@ -89,7 +89,7 @@ step 3 submit credentials
 
 **Use Case Name:**  Add new list/Remove an old list
 
-**Date:** 4/15/21 
+**Date:** 4/15/21
 
 ## Summary
 
@@ -103,7 +103,7 @@ actor 1 = User
 ## Preconditions
 
 * Must be signed in
-* In the home menu 
+* In the home menu
 
 ## Triggers
 
@@ -132,11 +132,11 @@ step 3 click add
 
 ### Alternate Postconditions
 
- 
+
 
 ## Non-functional Requirements
 
- 
+
 
 ## Glossary
 
@@ -150,11 +150,11 @@ step 3 click add
 
 **Use Case Name:**  Add/Remove item to list
 
-**Date:** 4/15/21 
+**Date:** 4/15/21
 
 ## Summary
 
-User should be able to add and remove items with ease. (ex: + and - buttons would be fast and effecient). 
+User should be able to add and remove items with ease. (ex: + and - buttons would be fast and effecient).
 
 ## Actors
 
@@ -165,7 +165,7 @@ actor 1 = User
 
 * Must be signed in
 
-* Must be inside a list 
+* Must be inside a list
 
 
 ## Triggers
@@ -186,7 +186,7 @@ step 3 click add
 
 ## Alternate Sequences
 
-* Step 1 Step 1 click '-' 
+* Step 1 Step 1 click '-'
 
 
 ### Alternate Trigger
@@ -195,11 +195,11 @@ step 3 click add
 
 ### Alternate Postconditions
 
- 
+
 
 ## Non-functional Requirements
 
- 
+
 
 ## Glossary
 
@@ -213,7 +213,7 @@ step 3 click add
 
 **Use Case Name:**  Share Completions of list to other users
 
-**Date:** 4/15/21 
+**Date:** 4/15/21
 
 ## Summary
 
@@ -234,7 +234,7 @@ Share button that allows user to share list with another user
 
 ## Primary Sequence
 
-step 1 click share 
+step 1 click share
 step 2 input user to share to
 
 
@@ -242,17 +242,17 @@ step 2 input user to share to
 
 * none
 
-## Alternate Sequences 
+## Alternate Sequences
 
 ### Alternate Trigger
 
 ### Alternate Postconditions
 
- 
+
 
 ## Non-functional Requirements
 
- 
+
 
 ## Glossary
 
@@ -266,11 +266,11 @@ step 2 input user to share to
 
 **Use Case Name:**  Mark items depending on completion
 
-**Date:** 4/15/21 
+**Date:** 4/15/21
 
 ## Summary
 
-Users should have the option to update the status of a their lists/items depending on how complete they are (ex: complete flag, not complete flag). 
+Users should have the option to update the status of a their lists/items depending on how complete they are (ex: complete flag, not complete flag).
 
 ## Actors
 
@@ -284,28 +284,29 @@ actor 1 = User
 
 ## Triggers
 
-Drop down list to mark the status of the task 
+Drop down list to mark the status of the task
 
 ## Primary Sequence
 
 step 1 select drop down
 step 2 choose status
 
+
 ## Primary Postconditions
 
 - none
 
-## Alternate Sequences 
+## Alternate Sequences
 
 ### Alternate Trigger
 
 ### Alternate Postconditions
 
- 
+
 
 ## Non-functional Requirements
 
- 
+
 
 ## Glossary
 
@@ -319,7 +320,7 @@ step 2 choose status
 
 **Use Case Name:**   Priority Markers
 
-**Date:** 4/15/21 
+**Date:** 4/15/21
 
 ## Summary
 
@@ -327,17 +328,17 @@ User should be able to to set tasks with different prioties (ex: urgent - not ur
 
 ## Actors
 
-actor 1 = User 
+actor 1 = User
 
 
 ## Preconditions
 
 * Must have a list
-* Must have a task added to a list already 
+* Must have a task added to a list already
 
 ## Triggers
 
-Option on task to change the color to flag the task 
+Option on task to change the color to flag the task
 
 ## Primary Sequence
 
@@ -347,20 +348,20 @@ step 2 options to set priority
 
 ## Primary Postconditions
 
-* none 
+* none
 
 
-## Alternate Sequences 
+## Alternate Sequences
 
 ### Alternate Trigger
 
 ### Alternate Postconditions
 
- 
+
 
 ## Non-functional Requirements
 
- 
+
 
 ## Glossary
 
@@ -372,79 +373,51 @@ step 2 options to set priority
 
 
 
-**Use Case Name:**  Searching 
+**Use Case Name:**  Searching
 
-**Date:**
-
- 
+**Date:** 4/17/21
 
 ## Summary
 
-write summary here
-
- 
+User should be able to search for a list with the help of a search bar.
 
 ## Actors
 
-actor 1
-actor 2
-….
+actor 1 = User
 
 
 ## Preconditions
 
-* precond 1
-
-* precond 2
-
-* ….
-
- 
+* The desired list should already be there in the database
 
 ## Triggers
 
-Explain trigger here
-
- 
+* Clicking on the search button after typing the name of the list would give the user the desired list.
 
 ## Primary Sequence
 
-step 1 action
-step 2 action
-etc
+step 1 Type the name of list desired
 
 
 ## Primary Postconditions
 
-* postcondition
+* none
 
-* postcondition
-
-* etc
-
- 
 
 ## Alternate Sequences
 
-Only if you have alt seq
-
-* Step 1 alt. seq.
-
-* step 2 alt. seq.
-
-* etc
-
- 
+* none
 
 ### Alternate Trigger
 
 ### Alternate Postconditions
 
- 
+
+
 
 ## Non-functional Requirements
 
- 
+
 
 ## Glossary
 
@@ -458,77 +431,48 @@ Only if you have alt seq
 
 **Use Case Name: ** Navbar
 
-**Date:**
-
- 
+**Date:** 4/17/21
 
 ## Summary
 
-write summary here
-
- 
+Users should be able to switch between the pages with the help of a bar at the top with buttons that serve as a link to the different pages(Home, About).
 
 ## Actors
 
-actor 1
-actor 2
-….
+actor 1 = User
 
 
 ## Preconditions
 
-* precond 1
-
-* precond 2
-
-* ….
-
- 
+* The buttons for the desired pages should be available on every webpage.
 
 ## Triggers
 
-Explain trigger here
-
- 
+* Clicking on the button for a particular webpage would result in the browser redirecting to that webpage.
 
 ## Primary Sequence
 
-step 1 action
-step 2 action
-etc
+step 1 click on the button for a particular webpage on the navbar
 
 
 ## Primary Postconditions
 
-* postcondition
+* none
 
-* postcondition
-
-* etc
-
- 
 
 ## Alternate Sequences
 
-Only if you have alt seq
-
-* Step 1 alt. seq.
-
-* step 2 alt. seq.
-
-* etc
-
- 
+* none
 
 ### Alternate Trigger
 
 ### Alternate Postconditions
 
- 
+
 
 ## Non-functional Requirements
 
- 
+
 
 ## Glossary
 
@@ -544,11 +488,9 @@ Only if you have alt seq
 
 **Date:**  4/15/2021
 
- 
-
 ## Summary
 
-Allow users the ability to add color and formatting like bold, underline and italics to make certain tasks more visible or highlight importance 
+Allow users the ability to add color and formatting like bold, underline and italics to make certain tasks more visible or highlight importance
 
 ## Actors
 
@@ -563,9 +505,9 @@ actor 1 = User
 
 * Already made a new task
 
-  
 
- 
+
+
 
 ## Triggers
 
@@ -583,7 +525,7 @@ step 2) Select formatting wanted
 
 
 
- 
+
 
 
 
@@ -595,11 +537,11 @@ step 2) Select formatting wanted
 
 **Date:** 4/15/2021
 
- 
+
 
 ## Summary
 
-Allow user to have access to a usable mobile version, not losing main functionality of the app when accessed on a mobile device. 
+Allow user to have access to a usable mobile version, not losing main functionality of the app when accessed on a mobile device.
 
 ## Actors
 
@@ -616,7 +558,7 @@ actor 1= User
 
 ## Triggers
 
-When site is accessed on a mobile device, should launch a useable version 
+When site is accessed on a mobile device, should launch a useable version
 
 ## Primary Sequence
 
@@ -627,7 +569,7 @@ step 1) Open site on mobile device
 
 * Site should be readable and usable on a mobile version
 
- 
+
 
 
 
@@ -639,19 +581,13 @@ step 1) Open site on mobile device
 
 **Date:**
 
- 
-
 ## Summary
 
-write summary here
-
- 
+Users should have a place to find their tasks and to do lists.
 
 ## Actors
 
-actor 1
-actor 2
-….
+actor 1 = User
 
 
 ## Preconditions
@@ -662,13 +598,9 @@ actor 2
 
 * ….
 
- 
-
 ## Triggers
 
 Explain trigger here
-
- 
 
 ## Primary Sequence
 
@@ -685,7 +617,6 @@ etc
 
 * etc
 
- 
 
 ## Alternate Sequences
 
@@ -697,17 +628,17 @@ Only if you have alt seq
 
 * etc
 
- 
+
 
 ### Alternate Trigger
 
 ### Alternate Postconditions
 
- 
+
 
 ## Non-functional Requirements
 
- 
+
 
 ## Glossary
 
@@ -723,13 +654,13 @@ Only if you have alt seq
 
 **Date:**
 
- 
+
 
 ## Summary
 
 write summary here
 
- 
+
 
 ## Actors
 
@@ -746,13 +677,13 @@ actor 2
 
 * ….
 
- 
+
 
 ## Triggers
 
 Explain trigger here
 
- 
+
 
 ## Primary Sequence
 
@@ -769,7 +700,7 @@ etc
 
 * etc
 
- 
+
 
 ## Alternate Sequences
 
@@ -781,17 +712,17 @@ Only if you have alt seq
 
 * etc
 
- 
+
 
 ### Alternate Trigger
 
 ### Alternate Postconditions
 
- 
+
 
 ## Non-functional Requirements
 
- 
+
 
 ## Glossary
 
@@ -807,13 +738,13 @@ Only if you have alt seq
 
 **Date:**
 
- 
+
 
 ## Summary
 
 write summary here
 
- 
+
 
 ## Actors
 
@@ -830,13 +761,13 @@ actor 2
 
 * ….
 
- 
+
 
 ## Triggers
 
 Explain trigger here
 
- 
+
 
 ## Primary Sequence
 
@@ -853,7 +784,7 @@ etc
 
 * etc
 
- 
+
 
 ## Alternate Sequences
 
@@ -865,17 +796,17 @@ Only if you have alt seq
 
 * etc
 
- 
+
 
 ### Alternate Trigger
 
 ### Alternate Postconditions
 
- 
+
 
 ## Non-functional Requirements
 
- 
+
 
 ## Glossary
 
@@ -887,17 +818,17 @@ Only if you have alt seq
 
 
 
-**Use Case Name:** Notifications 
+**Use Case Name:** Notifications
 
 **Date:**
 
- 
+
 
 ## Summary
 
 write summary here
 
- 
+
 
 ## Actors
 
@@ -914,13 +845,13 @@ actor 2
 
 * ….
 
- 
+
 
 ## Triggers
 
 Explain trigger here
 
- 
+
 
 ## Primary Sequence
 
@@ -937,7 +868,7 @@ etc
 
 * etc
 
- 
+
 
 ## Alternate Sequences
 
@@ -949,17 +880,17 @@ Only if you have alt seq
 
 * etc
 
- 
+
 
 ### Alternate Trigger
 
 ### Alternate Postconditions
 
- 
+
 
 ## Non-functional Requirements
 
- 
+
 
 ## Glossary
 
@@ -975,13 +906,13 @@ Only if you have alt seq
 
 **Date:**
 
- 
+
 
 ## Summary
 
 write summary here
 
- 
+
 
 ## Actors
 
@@ -998,13 +929,13 @@ actor 2
 
 * ….
 
- 
+
 
 ## Triggers
 
 Explain trigger here
 
- 
+
 
 ## Primary Sequence
 
@@ -1021,7 +952,7 @@ etc
 
 * etc
 
- 
+
 
 ## Alternate Sequences
 
@@ -1033,17 +964,17 @@ Only if you have alt seq
 
 * etc
 
- 
+
 
 ### Alternate Trigger
 
 ### Alternate Postconditions
 
- 
+
 
 ## Non-functional Requirements
 
- 
+
 
 ## Glossary
 
@@ -1057,13 +988,13 @@ Only if you have alt seq
 
 **Date:**
 
- 
+
 
 ## Summary
 
 write summary here
 
- 
+
 
 ## Actors
 
@@ -1080,13 +1011,13 @@ actor 2
 
 * ….
 
- 
+
 
 ## Triggers
 
 Explain trigger here
 
- 
+
 
 ## Primary Sequence
 
@@ -1103,7 +1034,7 @@ etc
 
 * etc
 
- 
+
 
 ## Alternate Sequences
 
@@ -1115,16 +1046,16 @@ Only if you have alt seq
 
 * etc
 
- 
+
 
 ### Alternate Trigger
 
 ### Alternate Postconditions
 
- 
+
 
 ## Non-functional Requirements
 
- 
+
 
 ## Glossary
