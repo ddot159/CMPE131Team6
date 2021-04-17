@@ -579,36 +579,11 @@ step 2) Select formatting wanted
 
 ## Primary Postconditions
 
-* n/a
+* Selected Item must be formatted in the way indicated by the user
 
 
- 
-
-## Alternate Sequences
-
-Only if you have alt seq
-
-* Step 1 alt. seq.
-
-* step 2 alt. seq.
-
-* etc
 
  
-
-### Alternate Trigger
-
-### Alternate Postconditions
-
- 
-
-## Non-functional Requirements
-
- 
-
-## Glossary
-
-
 
 
 
@@ -637,7 +612,7 @@ actor 1= User
 * n/a
 
 
- 
+
 
 ## Triggers
 
@@ -650,21 +625,9 @@ step 1) Open site on mobile device
 
 ## Primary Postconditions
 
- 
+* Site should be readable and usable on a mobile version
 
  
-
-### 
-
- 
-
-## Non-functional Requirements
-
- 
-
-## Glossary
-
-
 
 
 
