@@ -579,7 +579,7 @@ step 1) Open site on mobile device
 
 **Use Case Name:** Inbox
 
-**Date:**
+**Date:** 4/17/21
 
 ## Summary
 
@@ -592,57 +592,49 @@ actor 1 = User
 
 ## Preconditions
 
-* precond 1
+* user is logged in
 
-* precond 2
-
-* ….
 
 ## Triggers
 
-Explain trigger here
+The user presses or clicks the inbox icon
 
 ## Primary Sequence
 
-step 1 action
-step 2 action
-etc
+step 1 Use the search bar or scroll through inbox to find a list or task
+step 2 Select the item the user wants to view
+step 3 Select the back arrow to exit the inbox
 
 
 ## Primary Postconditions
 
-* postcondition
+* inbox refreshes after the user exits
 
-* postcondition
 
-* etc
 
 
 ## Alternate Sequences
 
 Only if you have alt seq
 
-* Step 1 alt. seq.
+* Step 1 If the user used the search bar to find an item hit enter and then select item
 
-* step 2 alt. seq.
-
-* etc
 
 
 
 ### Alternate Trigger
 
+*none
+
 ### Alternate Postconditions
 
-
+* user manually refreshes the inbox
 
 ## Non-functional Requirements
 
 
 
 ## Glossary
-
-
 
 
 
@@ -652,44 +644,38 @@ Only if you have alt seq
 
 **Use Case Name:** Calendar
 
-**Date:**
+**Date:** 4/17/21
 
 
 
 ## Summary
 
-write summary here
-
+The calendar function allows user to set up reminders on upcoming dates
 
 
 ## Actors
 
-actor 1
-actor 2
-….
+actor 1 = user
 
 
 ## Preconditions
 
-* precond 1
+* user is logged in
 
-* precond 2
-
-* ….
 
 
 
 ## Triggers
 
-Explain trigger here
-
+User presses calendar link or icon on the page
 
 
 ## Primary Sequence
 
-step 1 action
-step 2 action
-etc
+step 1 On the actual calender select a date MM/DD/YYYY 
+step 2 Select a time or range of time for the item
+step 3 Save to make changes
+
 
 
 ## Primary Postconditions
@@ -704,13 +690,8 @@ etc
 
 ## Alternate Sequences
 
-Only if you have alt seq
 
-* Step 1 alt. seq.
-
-* step 2 alt. seq.
-
-* etc
+* n/a
 
 
 
@@ -734,7 +715,7 @@ Only if you have alt seq
 
 
 
-**Use Case Name: **Filtering
+**Use Case Name: **Filtering inbox
 
 **Date:**
 
@@ -742,59 +723,52 @@ Only if you have alt seq
 
 ## Summary
 
-write summary here
+Used to find specific items in the inbox
 
 
 
 ## Actors
 
-actor 1
-actor 2
-….
+actor 1 = user
+
 
 
 ## Preconditions
 
-* precond 1
+* user logged in
 
-* precond 2
+* inside of inbox
 
-* ….
+* filters are assigned to items
 
 
 
 ## Triggers
 
-Explain trigger here
-
+user selects the filtering tool in the inbox
 
 
 ## Primary Sequence
 
-step 1 action
-step 2 action
-etc
+step 1 select the desired options marked as flagged/starred/archive/unread
+step 2 click done
+
 
 
 ## Primary Postconditions
 
-* postcondition
+* n/a 
 
-* postcondition
-
-* etc
+* 
 
 
 
 ## Alternate Sequences
 
-Only if you have alt seq
 
-* Step 1 alt. seq.
 
-* step 2 alt. seq.
+* users can select multiple options
 
-* etc
 
 
 
@@ -872,17 +846,19 @@ etc
 
 ## Alternate Sequences
 
-Only if you have alt seq
+only if you have an alt seq
 
-* Step 1 alt. seq.
+* step 1 alt seq.
 
-* step 2 alt. seq.
+* step 2 alt seq.
 
 * etc
 
 
 
 ### Alternate Trigger
+
+
 
 ### Alternate Postconditions
 
