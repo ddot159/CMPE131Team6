@@ -672,7 +672,7 @@ User presses calendar link or icon on the page
 
 ## Primary Sequence
 
-step 1 On the actual calender select a date MM/DD/YYYY 
+step 1 On the actual calender select a date MM/DD/YYYY
 step 2 Select a time or range of time for the item
 step 3 Save to make changes
 
@@ -757,9 +757,9 @@ step 2 click done
 
 ## Primary Postconditions
 
-* n/a 
+* n/a
 
-* 
+*
 
 
 
@@ -800,59 +800,41 @@ step 2 click done
 
 ## Summary
 
-write summary here
+Users should be able to set notifications to appear on their phones, inboxes, etc
 
 
 
 ## Actors
 
-actor 1
-actor 2
-….
+actor 1 = User
 
 
 ## Preconditions
 
-* precond 1
-
-* precond 2
-
-* ….
+* There should be an option for setting a reminder or getting notified for the lists
 
 
 
 ## Triggers
 
-Explain trigger here
+Choosing the option would lead to a reminder being set in the system
 
 
 
 ## Primary Sequence
 
-step 1 action
-step 2 action
-etc
+step 1 Click on the option for setting reminder
 
 
 ## Primary Postconditions
 
-* postcondition
-
-* postcondition
-
-* etc
+* none
 
 
 
 ## Alternate Sequences
 
 only if you have an alt seq
-
-* step 1 alt seq.
-
-* step 2 alt seq.
-
-* etc
 
 
 
@@ -886,59 +868,41 @@ only if you have an alt seq
 
 ## Summary
 
-write summary here
+Users should be able to click on their tasks or to-do lists and view additional info about them
 
 
 
 ## Actors
 
-actor 1
-actor 2
-….
+actor 1 = User
 
 
 ## Preconditions
 
-* precond 1
-
-* precond 2
-
-* ….
+* The list that needs to be viewed or the details of the list that need to be viewed should already be there
 
 
 
 ## Triggers
 
-Explain trigger here
+Clicking on the list would open the list and also present some additional info with it
 
 
 
 ## Primary Sequence
 
-step 1 action
-step 2 action
-etc
+step 1 Click on the List to open it
+
 
 
 ## Primary Postconditions
 
-* postcondition
-
-* postcondition
-
-* etc
-
+* none
 
 
 ## Alternate Sequences
 
-Only if you have alt seq
-
-* Step 1 alt. seq.
-
-* step 2 alt. seq.
-
-* etc
+* none
 
 
 
@@ -968,59 +932,40 @@ Only if you have alt seq
 
 ## Summary
 
-write summary here
+User should be able to properly logout of the website with just one tap on the button and the website should not be able reload the user's profile after logout unless he signs in again
 
 
 
 ## Actors
 
-actor 1
-actor 2
-….
+actor 1 = User
 
 
 ## Preconditions
 
-* precond 1
-
-* precond 2
-
-* ….
-
+* There should be a logout button somewhere around the top or more specifically beside the navbar
 
 
 ## Triggers
 
-Explain trigger here
+Clicking on the logout button would lead to the user getting out of his account
 
 
 
 ## Primary Sequence
 
-step 1 action
-step 2 action
-etc
+step 1 Click on the logout button
 
 
 ## Primary Postconditions
 
-* postcondition
-
-* postcondition
-
-* etc
+* The data before the user signs out should be saved in the database and can only be accessed by that particular user
 
 
 
 ## Alternate Sequences
 
-Only if you have alt seq
-
-* Step 1 alt. seq.
-
-* step 2 alt. seq.
-
-* etc
+* none
 
 
 
