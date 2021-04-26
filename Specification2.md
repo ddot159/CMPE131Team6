@@ -67,17 +67,13 @@ step 3 submit credentials
 
 ### Alternate Trigger
 
-- Forgot password
+* Forgot password
 
 ### Alternate Postconditions
 
-- Must half email associated with user
-
-## Non-functional Requirements
+* Must half email associated with user
 
 
-
-## Glossary
 
 
 
@@ -128,17 +124,13 @@ step 3 click add
 
 ### Alternate Trigger
 
-'-' to delete a list
+* '-' to delete a list
 
 ### Alternate Postconditions
 
+* none
 
 
-## Non-functional Requirements
-
-
-
-## Glossary
 
 
 
@@ -167,7 +159,6 @@ actor 1 = User
 
 * Must be inside a list
 
-
 ## Triggers
 
 You must click on a '+' button and name the new title. In order to remove you must click on the '-' next to a task to remove it.
@@ -191,17 +182,13 @@ step 3 click add
 
 ### Alternate Trigger
 
-'-' to delete a task
+* '-' to delete a task
 
 ### Alternate Postconditions
 
+* none
 
 
-## Non-functional Requirements
-
-
-
-## Glossary
 
 
 
@@ -242,19 +229,7 @@ step 2 input user to share to
 
 * none
 
-## Alternate Sequences
 
-### Alternate Trigger
-
-### Alternate Postconditions
-
-
-
-## Non-functional Requirements
-
-
-
-## Glossary
 
 
 
@@ -296,19 +271,7 @@ step 2 choose status
 
 - none
 
-## Alternate Sequences
 
-### Alternate Trigger
-
-### Alternate Postconditions
-
-
-
-## Non-functional Requirements
-
-
-
-## Glossary
 
 
 
@@ -351,19 +314,7 @@ step 2 options to set priority
 * none
 
 
-## Alternate Sequences
 
-### Alternate Trigger
-
-### Alternate Postconditions
-
-
-
-## Non-functional Requirements
-
-
-
-## Glossary
 
 
 
@@ -404,22 +355,7 @@ step 1 Type the name of list desired
 * none
 
 
-## Alternate Sequences
 
-* none
-
-### Alternate Trigger
-
-### Alternate Postconditions
-
-
-
-
-## Non-functional Requirements
-
-
-
-## Glossary
 
 
 
@@ -460,21 +396,7 @@ step 1 click on the button for a particular webpage on the navbar
 * none
 
 
-## Alternate Sequences
 
-* none
-
-### Alternate Trigger
-
-### Alternate Postconditions
-
-
-
-## Non-functional Requirements
-
-
-
-## Glossary
 
 
 
@@ -545,16 +467,12 @@ Allow user to have access to a usable mobile version, not losing main functional
 
 ## Actors
 
-actor 1= User
-
+actor 1 = User
 
 
 ## Preconditions
 
-* n/a
-
-
-
+* none
 
 ## Triggers
 
@@ -611,15 +529,11 @@ step 3 Select the back arrow to exit the inbox
 * inbox refreshes after the user exits
 
 
-
-
 ## Alternate Sequences
 
 Only if you have alt seq
 
 * Step 1 If the user used the search bar to find an item hit enter and then select item
-
-
 
 
 ### Alternate Trigger
@@ -630,11 +544,6 @@ Only if you have alt seq
 
 * user manually refreshes the inbox
 
-## Non-functional Requirements
-
-
-
-## Glossary
 
 
 
@@ -651,7 +560,6 @@ Only if you have alt seq
 ## Summary
 
 The calendar function allows user to set up reminders on upcoming dates
-
 
 ## Actors
 
@@ -688,24 +596,7 @@ step 3 Save to make changes
 
 
 
-## Alternate Sequences
 
-
-* n/a
-
-
-
-### Alternate Trigger
-
-### Alternate Postconditions
-
-
-
-## Non-functional Requirements
-
-
-
-## Glossary
 
 
 
@@ -717,7 +608,7 @@ step 3 Save to make changes
 
 **Use Case Name: **Filtering inbox
 
-**Date:**
+**Date:** 4/17/21
 
 
 
@@ -725,12 +616,9 @@ step 3 Save to make changes
 
 Used to find specific items in the inbox
 
-
-
 ## Actors
 
 actor 1 = user
-
 
 
 ## Preconditions
@@ -741,12 +629,9 @@ actor 1 = user
 
 * filters are assigned to items
 
-
-
 ## Triggers
 
 user selects the filtering tool in the inbox
-
 
 ## Primary Sequence
 
@@ -754,35 +639,17 @@ step 1 select the desired options marked as flagged/starred/archive/unread
 step 2 click done
 
 
-
 ## Primary Postconditions
 
-* n/a
-
-*
-
+* none
 
 
 ## Alternate Sequences
-
-
 
 * users can select multiple options
 
 
 
-
-### Alternate Trigger
-
-### Alternate Postconditions
-
-
-
-## Non-functional Requirements
-
-
-
-## Glossary
 
 
 
@@ -794,15 +661,13 @@ step 2 click done
 
 **Use Case Name:** Notifications
 
-**Date:**
+**Date:** 4/17/21
 
 
 
 ## Summary
 
 Users should be able to set notifications to appear on their phones, inboxes, etc
-
-
 
 ## Actors
 
@@ -813,13 +678,9 @@ actor 1 = User
 
 * There should be an option for setting a reminder or getting notified for the lists
 
-
-
 ## Triggers
 
 Choosing the option would lead to a reminder being set in the system
-
-
 
 ## Primary Sequence
 
@@ -832,25 +693,7 @@ step 1 Click on the option for setting reminder
 
 
 
-## Alternate Sequences
 
-only if you have an alt seq
-
-
-
-### Alternate Trigger
-
-
-
-### Alternate Postconditions
-
-
-
-## Non-functional Requirements
-
-
-
-## Glossary
 
 
 
@@ -862,15 +705,13 @@ only if you have an alt seq
 
 **Use Case Name:** Viewing Function
 
-**Date:**
+**Date:** 4/17/21
 
 
 
 ## Summary
 
 Users should be able to click on their tasks or to-do lists and view additional info about them
-
-
 
 ## Actors
 
@@ -881,18 +722,13 @@ actor 1 = User
 
 * The list that needs to be viewed or the details of the list that need to be viewed should already be there
 
-
-
 ## Triggers
 
 Clicking on the list would open the list and also present some additional info with it
 
-
-
 ## Primary Sequence
 
 step 1 Click on the List to open it
-
 
 
 ## Primary Postconditions
@@ -900,23 +736,7 @@ step 1 Click on the List to open it
 * none
 
 
-## Alternate Sequences
 
-* none
-
-
-
-### Alternate Trigger
-
-### Alternate Postconditions
-
-
-
-## Non-functional Requirements
-
-
-
-## Glossary
 
 
 
@@ -926,15 +746,13 @@ step 1 Click on the List to open it
 
 **Use Case Name:** Logout Button
 
-**Date:**
+**Date:** 4/17/21
 
 
 
 ## Summary
 
 User should be able to properly logout of the website with just one tap on the button and the website should not be able reload the user's profile after logout unless he signs in again
-
-
 
 ## Actors
 
@@ -945,12 +763,9 @@ actor 1 = User
 
 * There should be a logout button somewhere around the top or more specifically beside the navbar
 
-
 ## Triggers
 
 Clicking on the logout button would lead to the user getting out of his account
-
-
 
 ## Primary Sequence
 
@@ -960,23 +775,3 @@ step 1 Click on the logout button
 ## Primary Postconditions
 
 * The data before the user signs out should be saved in the database and can only be accessed by that particular user
-
-
-
-## Alternate Sequences
-
-* none
-
-
-
-### Alternate Trigger
-
-### Alternate Postconditions
-
-
-
-## Non-functional Requirements
-
-
-
-## Glossary
