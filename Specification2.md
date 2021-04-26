@@ -775,3 +775,7 @@ step 1 Click on the logout button
 ## Primary Postconditions
 
 * The data before the user signs out should be saved in the database and can only be accessed by that particular user
+
+
+
+ ![TarkrUMLPNG](C:\Users\Adrian\Documents\CMPE131Team6\TarkrUMLPNG.PNG)
