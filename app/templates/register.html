@@ -5,6 +5,10 @@
     <form action="" method="post" novalidate>
         {{ form.hidden_tag() }}
         <p>
+            {{ form.email.label }}<br>
+            {{ form.email(size=32) }}
+        </p>
+        <p>
             {{ form.username.label }}<br>
             {{ form.username(size=32) }}
         </p>
@@ -12,14 +16,8 @@
             {{ form.password.label }}<br>
             {{ form.password(size=32) }}
         </p>
-<<<<<<< HEAD
 
+        <p>{{ form.register() }}</p>
+    </form>
 
-        <p>{{ form.submit() }}</p>
-    </form>
-  {% endblock %}
-=======
-        
-        <p>{{ form.submit() }}</p>
-    </form>
->>>>>>> 8659953c2a68d8f3cad914c066cb71730d6bcc99
+{% endblock %}
