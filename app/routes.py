@@ -77,10 +77,10 @@ def register():
         user = User.query.filter_by(username=form.username.data).first()
 
         if user is None:
-            new_user = User(username = form.username.data, email =form.email.data, password = form.password.data)
+            new_user = User(username = form.username.data, password = form.password.data)
             db.session.add(new_user)
             db.session.commit()
-            flash('Done! You wil be redirected to the login page')
+            flash('Congratulations! You have been successfully registered as a user')
             return redirect('/login')
 
 
