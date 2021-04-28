@@ -4,6 +4,7 @@ from flask_login import logout_user
 from flask_login import login_required
 
 from app import myapp_obj
+from app import db
 from app.forms import LoginForm
 
 from app.models import User
@@ -42,7 +43,7 @@ def login():
         # let flask_login library know what user logged int
         # it also means that their password was correct
         login_user(user, remember=form.remember_me.data)
-      
+
         # return to page before user got asked to login
         # for example, if user tried to access a wedpage called profile, but since they
         # weren't logged in they would get redirected to login page. After they log in
@@ -66,3 +67,32 @@ def req():
     User needs to be logged in
     </body>
     </html>'''
+
+@myapp_obj.route("/register", methods=['GET', 'POST'])
+def register():
+    form = LoginForm()
+    if form.validate_on_submit():
+
+        user = User.query.filter_by(username=form.username.data).first()
+
+        if user is None:
+            new_user = User(username = form.username.data, password = form.password.data)
+            db.session.add(new_user)
+            db.session.commit()
+
+            flash('Done! You wil be redirected to the login page')
+            return redirect('/login')
+
+
+        # return to page before user got asked to login
+        # for example, if user tried to access a wedpage called profile, but since they
+        # weren't logged in they would get redirected to login page. After they log in
+        # the user will be redirected to their previous request, which would be the profile
+        # page in this case.
+        # next_page = request.args.get('next')
+        # if not next_page or url_parse(next_page).netloc != '':
+        #     next_page = url_for('index')
+
+        # return redirect(next_page)
+
+    return render_template('register.html', title = register, form=form)
