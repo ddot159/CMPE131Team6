@@ -56,6 +56,7 @@ def login():
         return redirect(next_page)
 
     return render_template('login.html', title='Sign In', form=form)
+<<<<<<< HEAD
 
 @myapp_obj.route("/req")
 # user needs to be logged in to see this page
@@ -96,3 +97,16 @@ def register():
         # return redirect(next_page)
 
     return render_template('register.html', title = register, form=form)
+=======
+
+@myapp_obj.route("/req")
+# user needs to be logged in to see this page
+# needs to be user route!
+@login_required
+# called view function
+def req():
+    return '''<html><body>
+    User needs to be logged in
+    </body>
+    </html>'''
+>>>>>>> 8659953c2a68d8f3cad914c066cb71730d6bcc99
