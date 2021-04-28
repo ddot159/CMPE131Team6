@@ -9,11 +9,27 @@ from app.forms import LoginForm
 from app.models import User
 
 # different URL the app will implement
-@myapp_obj.route("/", methods=['GET', 'POST'])
+@myapp_obj.route("/")
+# called view function
+def hello():
+    user = {'name' : 'Miguel (made with Dictionary)'}
+    posts = [
+        {
+            'author' : 'Linh',
+            'body' : 'Beautiful day in San Jose!'
+        },
+        {
+            'author': 'Emma',
+            'body' : 'I got my vaccine today!'
+        }
+    ]
 
-def home():
-     form = LoginForm()
-     if form.validate_on_submit():
+    return render_template('hello.html', user_template=user, posts=posts)
+
+@myapp_obj.route("/login", methods=['GET', 'POST'])
+def login():
+    form = LoginForm()
+    if form.validate_on_submit():
         # User.query.filter_by() returns a list from the User table
         # first() returns first element of the list
         # the form.username.data is getting the info the user submitted in the form
@@ -38,15 +54,15 @@ def home():
 
         return redirect(next_page)
 
-     return render_template('login.html', title='Sign In', form=form)
-   
-   
+    return render_template('login.html', title='Sign In', form=form)
 
-@myapp_obj.route("/register", methods=['GET', 'POST'])
-def register():
-    form = LoginForm()
-    if form.validate_on_submit():
-        user = User.query.filter_by(username=form.username.data).first()
-        if user is None:
-            new_user = User().query.filter_by(form.username.data)
-    
+@myapp_obj.route("/req")
+# user needs to be logged in to see this page
+# needs to be user route!
+@login_required
+# called view function
+def req():
+    return '''<html><body>
+    User needs to be logged in
+    </body>
+    </html>'''
