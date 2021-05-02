@@ -6,9 +6,9 @@ from flask_login import login_required
 from app import db
 
 from app import myapp_obj
-from app.forms import LoginForm
+from app.forms import LoginForm, TaskForm
 
-from app.models import User, Post
+from app.models import User, Post, Task
 
 # different URL the app will implement
 # @myapp_obj.route("/")
@@ -59,6 +59,52 @@ def login():
 
     return render_template('login.html', title='Sign In', form=form)
 
+@myapp_obj.route("/task", methods=['GET', 'POST'])
+def task():
+    form = TaskForm()
+
+    if form.validate_on_submit():
+    
+        task_user = Task.query.filter_by(item=form.item.data).first()
+
+        if task_user is None:
+            new_item = Task(item = form.item.data)
+        
+            db.session.add(new_item)
+            db.session.commit()
+            flash('Task added successfully!')
+        
+    
+        
+      
+    """
+        next_page = request.args.get('next')
+        if not next_page or url_parse(next_page).netloc != '':
+            next_page = url_for('index')
+
+        return redirect(next_page)
+    """
+
+    
+    all_tasks = Task.query.all()
+    todo = [
+     
+    ]
+       
+    for a in all_tasks:
+
+        todo = todo + [
+            {
+                f'{Task.query.get(a.id)}',
+            
+            }
+        
+        ]
+     
+
+     
+    return render_template('task.html', title = task, form=form, todo=todo) 
+
 @myapp_obj.route("/home", methods=['GET', 'POST'])
 def home():
     return render_template('home.html', title='Home')
@@ -103,6 +149,7 @@ def register():
             flash('username already taken, please try another username!')
     return render_template('register.html', title = 'Sign Up', form=form)
 
+
 @myapp_obj.route("/lists", methods=['GET', 'POST'])
 def list():
     return render_template('lists.html', title = 'List')
@@ -112,3 +159,5 @@ def list():
 def logout():
     logout_user()
     return redirect('/')
+
+

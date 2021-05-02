@@ -9,3 +9,7 @@ class LoginForm(FlaskForm):
     remember_me = BooleanField('Remember Me')
     submit = SubmitField('Sign In')
     register = SubmitField('Register')
+
+class TaskForm(FlaskForm):
+    item = StringField('item', validators= [DataRequired()])
+    add = SubmitField('Add Task')
