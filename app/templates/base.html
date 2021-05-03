@@ -7,18 +7,18 @@
         <title>Home Page - my task</title>
         {% endif %}
     </head>
-    <body bgcolor="#808080">
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <ul>
-            {% for message in messages %}
-            <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        {% endwith %}
+	   <body style="background-color:gray;">
+	        {% with messages = get_flashed_messages() %}
+		    {% if messages %}
+		    <ul>
+				{% for message in messages %}
+			    <li>{{ message }}</li>
+			    {% endfor %}
+		    </ul>
+			{% endif %}
+		    {% endwith %}
 
-        {% block content %}
-        {% endblock %}
-    </body>
+		    {% block content %}
+            {% endblock %}
+	    </body>
 </html>
