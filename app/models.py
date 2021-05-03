@@ -6,6 +6,7 @@ from app import login
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 
+
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String, nullable=False, unique=False)
@@ -22,25 +23,32 @@ class User(UserMixin, db.Model):
     def __repr__(self):
         return '<User {}>'.format(self.username)
 
+
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     body = db.Column(db.String(256))
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
 
-    
-
     def __repr__(self):
         return '<Posts {}>'.format(self.body)
 
+
 class Task(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    item = db.Column(db.String(256), unique = False, nullable = False)
+    item = db.Column(db.String(256), unique=False, nullable=False)
     date = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    
 
     def __repr__(self):
         return '<Task {}>'.format(self.item)
+
+
+class List(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(256), unique=False, nullable=False)
+    date = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+
 
 @login.user_loader
 def load_user(id):
