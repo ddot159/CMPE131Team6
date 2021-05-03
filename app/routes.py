@@ -6,9 +6,9 @@ from flask_login import login_required
 from app import db
 
 from app import myapp_obj
-from app.forms import LoginForm, TaskForm
+from app.forms import LoginForm, TaskForm, ListForm
 
-from app.models import User, Post, Task
+from app.models import User, Post, Task, List
 
 # different URL the app will implement
 # @myapp_obj.route("/")
@@ -152,7 +152,22 @@ def register():
 
 @myapp_obj.route("/lists", methods=['GET', 'POST'])
 def list():
-    return render_template('lists.html', title = 'List')
+    form = ListForm()
+
+    if form.validate_on_submit():
+
+        list_name = List.query.filter_by(name=form.list.data).first()
+
+        if list_name is None:
+            new_list = List(name=form.list.data)
+
+            db.session.add(new_list)
+            db.session.commit()
+            flash('New List added successfully!')
+
+    lists = []
+
+    return render_template('lists.html', title = 'List', form=form)
 
 @myapp_obj.route("/logout")
 @login_required
