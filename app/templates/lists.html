@@ -1,3 +1,4 @@
+
 {% include "navbar.html" %}
 
 <h1>Lists Page!</h1>
@@ -11,4 +12,13 @@
         </p>
 
         <p>{{ form.add() }}</p>
+
+
+        {% for l in lists %}
+        <div>
+            <p>
+              <a class="nav-link" href= "/task"> {{ l }} <a>
+            </p>
+        </div>
+        {% endfor %}
 </form>

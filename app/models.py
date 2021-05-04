@@ -11,7 +11,7 @@ class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String, nullable=False, unique=False)
     password = db.Column(db.String(200), unique=False)
-
+    list = db.relationship('List', backref='user', lazy='dynamic')
     posts = db.relationship('Task', backref='author', lazy='dynamic')
 
     def set_password(self, password):
@@ -21,7 +21,7 @@ class User(UserMixin, db.Model):
         return check_password_hash(self.password, password)
 
     def __repr__(self):
-        return '<User {}>'.format(self.username)
+        return '<User {}>'.format(self.id)
 
 
 class Post(db.Model):
@@ -48,6 +48,9 @@ class List(db.Model):
     name = db.Column(db.String(256), unique=False, nullable=False)
     date = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+
+    def __repr__(self):
+        return '<List {}>'.format(self.name)
 
 
 @login.user_loader

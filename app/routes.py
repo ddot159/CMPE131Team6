@@ -30,7 +30,7 @@ from app.models import User, Post, Task, List
 
 @myapp_obj.route("/", methods=['GET', 'POST'])
 def login():
-    
+
     if current_user.is_authenticated:
         return redirect('/home')
 
@@ -58,40 +58,28 @@ def login():
         return redirect('/home')
 
     return render_template('login.html', title='Sign In', form=form)
-
+tasks = []
 @myapp_obj.route("/task", methods=['GET', 'POST'])
 def task():
     form = TaskForm()
 
     if form.validate_on_submit():
-    
+
         task_user = Task.query.filter_by(item=form.item.data).first()
 
         if task_user is None:
             new_item = Task(item = form.item.data)
-        
+
             db.session.add(new_item)
             db.session.commit()
-           
-        
-    all_tasks = Task.query.all()
-    todo = [
-     
-    ]
-       
-    for a in all_tasks:
 
-        todo = todo + [
-            {
-                f'{Task.query.get(a.id)}',
-            
-            }
-        
-        ]
-     
 
-     
-    return render_template('task.html', title = task, form=form, todo=todo) 
+        tasks.extend([form.item.data])
+        return redirect('/task')
+
+
+
+    return render_template('task.html', title = task, form=form, todo=tasks)
 
 @myapp_obj.route("/home", methods=['GET', 'POST'])
 def home():
@@ -137,7 +125,7 @@ def register():
             flash('username already taken, please try another username!')
     return render_template('register.html', title = 'Sign Up', form=form)
 
-
+lists = []
 @myapp_obj.route("/lists", methods=['GET', 'POST'])
 def list():
     form = ListForm()
@@ -153,14 +141,12 @@ def list():
             db.session.commit()
             flash('New List added successfully!')
 
-    lists = []
-
-    return render_template('lists.html', title = 'List', form=form)
+        lists.extend([form.list.data])
+        return redirect('/lists')
+    return render_template('lists.html', title = 'List', form=form, lists = lists)
 
 @myapp_obj.route("/logout")
 @login_required
 def logout():
     logout_user()
     return redirect('/')
-
-
