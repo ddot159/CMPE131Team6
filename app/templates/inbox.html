@@ -1,5 +1,13 @@
 {% include "navbar.html" %}
 
-<h1>Inbox</h1>
-<form action= "" method = "get" novalidate>
-    {{form.hidden_tag}}
+    <h1>Inbox</h1>
+
+    <div>
+    <a href="{{ url_for('inbox') }}"><button>REFRESH</button></a>
+    </div>
+
+        {% for t in todo %}
+        <div>
+            <p> {{ t }}</p>
+        </div>
+        {% endfor %}

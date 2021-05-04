@@ -1,4 +1,4 @@
-from flask import render_template, flash, redirect
+from flask import render_template, flash, redirect, url_for
 from flask_login import current_user, login_user
 from flask_login import logout_user
 from flask_login import login_required
@@ -8,7 +8,7 @@ from app import db
 from app import myapp_obj
 from app.forms import LoginForm, TaskForm, ListForm
 
-from app.models import User, Post, Task, List
+from app.models import User, Task, List
 
 # different URL the app will implement
 # @myapp_obj.route("/")
@@ -125,6 +125,12 @@ def register():
             flash('username already taken, please try another username!')
     return render_template('register.html', title = 'Sign Up', form=form)
 
+@myapp_obj.route("/inbox", methods=['GET', 'POST'])
+def inbox():
+    t = Task.query.all()
+
+    return render_template('inbox.html', title='Inbox', todo = t)
+
 lists = []
 @myapp_obj.route("/lists", methods=['GET', 'POST'])
 def list():
@@ -139,7 +145,6 @@ def list():
 
             db.session.add(new_list)
             db.session.commit()
-            flash('New List added successfully!')
 
         lists.extend([form.list.data])
         return redirect('/lists')
