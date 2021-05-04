@@ -53,7 +53,7 @@ Once the user is ready to leave the site, they can logout by simply pressing the
 
 ### Add List
 
-To add a list, the user can simply click the "Lists" button on the navbar at the top of the screen. The user will then be prompted to enter the name of the new list and click "Add List" and the list will be created.
+To add a list, the user can simply click the "Lists" button on the navbar at the top of the screen. The user will then be prompted to enter the name of the new list and click "Add List" and the list will be created. The list that is created will link to the task list page associated with it.
 
 
 
