@@ -51,13 +51,13 @@ Once the user is ready to leave the site, they can logout by simply pressing the
 
 
 
-### Add/Remove List
+### Add List
 
 To add a list, the user can simply click the "Lists" button on the navbar at the top of the screen. The user will then be prompted to enter the name of the new list and click "Add List" and the list will be created.
 
 
 
-### Add/Remove Task
+### Add Task
 
 To add a task, the user can click the dropdown menu on the navbar which will take them to the task page. Here they can type in the task, press "add task" and the task will be displayed on the screen.
 
@@ -71,7 +71,7 @@ The navbar is visible and usable throughout the site, and can help the user navi
 
 ### Inbox
 
-
+The inbox lists the tasks that were added from the task page. It has a refresh button that refreshes the page. If a task is added in another tab from the add task function, a refresh will update the inbox.
 
 
 
