@@ -1,4 +1,4 @@
-
+{% include "navbar.html" %}
 <style media="screen">
 
   body
@@ -13,6 +13,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   }
 
   h1{
@@ -26,20 +27,29 @@
   li{
     color: white
   }
+  button
+  {
+    background-color: #008CBA;
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    padding: 8px 8px;
+  }
 
 
 </style>
 
-{% include "navbar.html" %}
 
+    <br><br><br>
     <h1>Inbox</h1>
-
+    <br>
     <div>
     <a href="{{ url_for('inbox') }}"><button>REFRESH</button></a>
     </div>
+    <br>
 
         {% for t in todo %}
-        <div>
+        <div style="margin-left: 20px">
             <p> {{ t }}</p>
         </div>
         {% endfor %}

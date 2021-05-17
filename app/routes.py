@@ -62,26 +62,6 @@ def login():
 
     return render_template('login.html', title='Sign In', form=form)
 
-@myapp_obj.route("/task/<string:name>", methods=['GET', 'POST'])
-def task(name):
-
-    # form = TaskForm()
-    #
-    # if form.validate_on_submit():
-    #     task_user = Task.query.filter_by(item=form.item.data).first()
-    #
-    #     if task_user is None:
-    #         newitem = Task(item = form.item.data, listname = name)
-    #
-    #         db.session.add(newitem)
-    #         db.session.commit()
-
-
-
-
-
-
-    return render_template('task.html', title = task, form=form, name = name)
 
 @myapp_obj.route("/catemain")
 def catemain():
