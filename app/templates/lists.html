@@ -1,7 +1,7 @@
 
 {% include "navbar.html" %}
 
-<h1>Lists Page!</h1>
+<h1>Tasks Page!</h1>
 
 <form action="" method="post" novalidate>
         {{ form.hidden_tag() }}
@@ -11,13 +11,19 @@
             {{ form.list(size=32) }}
         </p>
 
-        <p>{{ form.add() }}</p>
+        <p>
+            {{ form.category.label }}<br>
+            {{ form.category(size=32) }}
+        </p>
 
+        <p>{{ form.add() }}</p>
+<br>
 
         {% for l in lists %}
         <div>
             <p>
-              <a class="nav-link" href= "/task"> {{ l }} <a>
+              <!-- <a class="nav-link" href= "/task"> {{ l }} <a> -->
+              {{l}}- Category: {{l.category}}
             </p>
         </div>
         {% endfor %}

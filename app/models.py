@@ -38,6 +38,7 @@ class Task(db.Model):
     item = db.Column(db.String(256), unique=False, nullable=False)
     date = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    task_name = db.Column(db.String, db.ForeignKey('list.name'))
 
     def __repr__(self):
         return '<Task {}>'.format(self.item)
@@ -48,7 +49,8 @@ class List(db.Model):
     name = db.Column(db.String(256), unique=False, nullable=False)
     date = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-
+    category = db.Column(db.String(256), unique = False, nullable=False)
+    tasks = db.relationship('Task', backref = "ta", lazy = "dynamic")
     def __repr__(self):
         return '<List {}>'.format(self.name)
 

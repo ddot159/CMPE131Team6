@@ -58,7 +58,7 @@ def login():
         return redirect('/home')
 
     return render_template('login.html', title='Sign In', form=form)
-tasks = []
+
 @myapp_obj.route("/task", methods=['GET', 'POST'])
 def task():
     form = TaskForm()
@@ -127,28 +127,41 @@ def register():
 
 @myapp_obj.route("/inbox", methods=['GET', 'POST'])
 def inbox():
-    t = Task.query.all()
+    t = List.query.filter_by(user = current_user)
 
     return render_template('inbox.html', title='Inbox', todo = t)
 
-lists = []
+
 @myapp_obj.route("/lists", methods=['GET', 'POST'])
 def list():
     form = ListForm()
 
     if form.validate_on_submit():
 
-        list_name = List.query.filter_by(name=form.list.data).first()
+        list_name = List.query.filter_by(name=form.list.data, user = current_user).first()
 
         if list_name is None:
-            new_list = List(name=form.list.data)
+            new_list = List(name=form.list.data, category = form.category.data, user = current_user)
 
             db.session.add(new_list)
+
             db.session.commit()
 
-        lists.extend([form.list.data])
+
         return redirect('/lists')
-    return render_template('lists.html', title = 'List', form=form, lists = lists)
+    return render_template('lists.html', title = 'List', form=form, lists = List.query.filter_by(user = current_user))
+
+@myapp_obj.route("/catem")
+def catem():
+    aset = []
+    for l in List.query.filter_by(user = current_user):
+        aset.append(l.category)
+
+    return render_template('catem.html', bset = set(aset))
+
+@myapp_obj.route("/cate/<string:name>")
+def cate(name):
+    return render_template('cate.html', cates = List.query.filter_by(category = name, user = current_user))
 
 @myapp_obj.route("/logout")
 @login_required

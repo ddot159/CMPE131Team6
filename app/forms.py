@@ -19,3 +19,4 @@ class TaskForm(FlaskForm):
 class ListForm(FlaskForm):
     list = StringField('List Name', validators=[DataRequired()])
     add = SubmitField('Add List')
+    category = StringField('Category', validators = [DataRequired()])
