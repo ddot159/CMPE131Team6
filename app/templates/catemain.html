@@ -1,4 +1,5 @@
 
+{% include "navbar.html" %}
 <style media="screen">
 
   body
@@ -29,17 +30,14 @@
 
 
 </style>
-
-{% include "navbar.html" %}
-
-    <h1>Inbox</h1>
-
-    <div>
-    <a href="{{ url_for('inbox') }}"><button>REFRESH</button></a>
-    </div>
-
-        {% for t in todo %}
-        <div>
-            <p> {{ t }}</p>
-        </div>
-        {% endfor %}
+<br><br><br><br>
+<center>
+<h1><u>Categories</u></h1>
+{% for b in bset %}
+<div>
+    <p>
+      <h3><a style="color:grey"href="/cate/{{b}}"><i> {{ b}} </i></a></h3>
+    </p>
+</div>
+{% endfor %}
+</center>

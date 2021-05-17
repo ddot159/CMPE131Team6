@@ -1,3 +1,4 @@
+{% include "navbar.html" %}
 
 <style media="screen">
 
@@ -29,17 +30,13 @@
 
 
 </style>
+<br><br><br><br><br>
+<center><h1>{{na}} category</h1>
 
-{% include "navbar.html" %}
-
-    <h1>Inbox</h1>
-
-    <div>
-    <a href="{{ url_for('inbox') }}"><button>REFRESH</button></a>
-    </div>
-
-        {% for t in todo %}
-        <div>
-            <p> {{ t }}</p>
-        </div>
-        {% endfor %}
+{% for c in cates %}
+<div>
+    <p style="margin-left:25px">
+        <h3 style="color: white"><i><b>{{ c.name}}</b></i></h3>
+    </p>
+</div>
+{% endfor %}</center>

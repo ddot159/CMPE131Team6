@@ -1,7 +1,8 @@
-from flask import render_template, flash, redirect, url_for
+from flask import render_template, flash, redirect, url_for, request, session
 from flask_login import current_user, login_user
 from flask_login import logout_user
 from flask_login import login_required
+from datetime import timedelta
 
 from app import db
 
@@ -27,7 +28,9 @@ from app.models import User, Task, List
 #     ]
 #
 #     return render_template('hello.html', user_template=user, posts=posts)
-
+@myapp_obj.route("/base")
+def base():
+    return render_template('base.html')
 @myapp_obj.route("/", methods=['GET', 'POST'])
 def login():
 
@@ -47,7 +50,7 @@ def login():
             return redirect('/')
         # let flask_login library know what user logged int
         # it also means that their password was correct
-        login_user(user, remember=form.remember_me.data)
+        login_user(user, remember = form.remember_me.data)
 
         # return to page before user got asked to login
         # for example, if user tried to access a wedpage called profile, but since they
@@ -58,28 +61,40 @@ def login():
         return redirect('/home')
 
     return render_template('login.html', title='Sign In', form=form)
-tasks = []
-@myapp_obj.route("/task", methods=['GET', 'POST'])
-def task():
-    form = TaskForm()
 
-    if form.validate_on_submit():
+@myapp_obj.route("/task/<string:name>", methods=['GET', 'POST'])
+def task(name):
 
-        task_user = Task.query.filter_by(item=form.item.data).first()
-
-        if task_user is None:
-            new_item = Task(item = form.item.data)
-
-            db.session.add(new_item)
-            db.session.commit()
-
-
-        tasks.extend([form.item.data])
-        return redirect('/task')
+    # form = TaskForm()
+    #
+    # if form.validate_on_submit():
+    #     task_user = Task.query.filter_by(item=form.item.data).first()
+    #
+    #     if task_user is None:
+    #         newitem = Task(item = form.item.data, listname = name)
+    #
+    #         db.session.add(newitem)
+    #         db.session.commit()
 
 
 
-    return render_template('task.html', title = task, form=form, todo=tasks)
+
+
+
+    return render_template('task.html', title = task, form=form, name = name)
+
+@myapp_obj.route("/catemain")
+def catemain():
+    asset = []
+    for l in List.query.filter_by(user = current_user):
+        asset.append(l.category)
+    return render_template('catemain.html', bset = set(asset))
+
+
+@myapp_obj.route("/cate/<string:name>")
+def cate(name):
+    return render_template('category.html', cates = List.query.filter_by(category = name, user = current_user), na = name)
+
 
 @myapp_obj.route("/home", methods=['GET', 'POST'])
 def home():
@@ -127,28 +142,29 @@ def register():
 
 @myapp_obj.route("/inbox", methods=['GET', 'POST'])
 def inbox():
-    t = Task.query.all()
+    t = List.query.filter_by(user = current_user)
 
     return render_template('inbox.html', title='Inbox', todo = t)
 
-lists = []
+# lists = []
 @myapp_obj.route("/lists", methods=['GET', 'POST'])
 def list():
     form = ListForm()
-
     if form.validate_on_submit():
-
-        list_name = List.query.filter_by(name=form.list.data).first()
+        list_name = List.query.filter_by(name=form.list.data, user = current_user).first()
 
         if list_name is None:
-            new_list = List(name=form.list.data)
+            new_list = List(name=form.list.data, category = form.category.data, user = current_user)
+            new_cat = Task(item=form.category.data, task_name = form.list.data, user =current_user)
 
             db.session.add(new_list)
             db.session.commit()
 
-        lists.extend([form.list.data])
+        # lists = List.query.filter_by(user=current_user)
         return redirect('/lists')
-    return render_template('lists.html', title = 'List', form=form, lists = lists)
+    return render_template('lists.html', title = 'List', form=form, lists = List.query.filter_by(user=current_user))
+
+
 
 @myapp_obj.route("/logout")
 @login_required

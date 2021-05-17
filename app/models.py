@@ -11,8 +11,8 @@ class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String, nullable=False, unique=False)
     password = db.Column(db.String(200), unique=False)
-    list = db.relationship('List', backref='user', lazy='dynamic')
-    posts = db.relationship('Task', backref='author', lazy='dynamic')
+    lists = db.relationship('List', backref='user', lazy='dynamic')
+    posts = db.relationship('Task', backref='user', lazy='dynamic')
 
     def set_password(self, password):
         self.password = generate_password_hash(password)
@@ -37,6 +37,8 @@ class Task(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     item = db.Column(db.String(256), unique=False, nullable=False)
     date = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    #user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    task_name = db.Column(db.String, db.ForeignKey('list.name'))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
     def __repr__(self):
@@ -47,10 +49,12 @@ class List(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(256), unique=False, nullable=False)
     date = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    category = db.Column(db.String(256), unique=False, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    tasks = db.relationship('Task', backref = 'task', lazy = 'dynamic')
 
     def __repr__(self):
-        return '<List {}>'.format(self.name)
+        return '{}'.format(self.name)
 
 
 @login.user_loader

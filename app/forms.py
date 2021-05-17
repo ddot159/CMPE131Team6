@@ -17,5 +17,6 @@ class TaskForm(FlaskForm):
 
 
 class ListForm(FlaskForm):
-    list = StringField('List Name', validators=[DataRequired()])
-    add = SubmitField('Add List')
+    list = StringField('Task Name', validators=[DataRequired()])
+    add = SubmitField('Add Task')
+    category = StringField('Category')

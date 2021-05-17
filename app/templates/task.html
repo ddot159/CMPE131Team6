@@ -1,15 +1,24 @@
 {% include "navbar.html" %}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul>
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
 
-<h1>Task List</h1>
+<h1>Tasks {{name}}</h1>
 <form action="" method="post" novalidate>
     {{ form.hidden_tag() }}
     <table>
         <tr>
             <th>Task</th>
-                <td></td> 
                 <td></td>
-            
-            
+                <td></td>
+
+
         </tr>
     </table>
 
@@ -20,9 +29,9 @@
 
     <p>{{ form.add() }}</p>
 
-    {% for t in todo %}
+    <!-- {% for t in todo %}
     <div>
-        <p> {{ t }}</p>
+        <p> {{ t.item }}</p>
     </div>
-    {% endfor %}
+    {% endfor %} -->
 </form>

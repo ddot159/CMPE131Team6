@@ -1,7 +1,41 @@
-
 {% include "navbar.html" %}
+<style media="screen">
 
-<h1>Lists Page!</h1>
+
+  body
+  {
+  /* The image used */
+  background-image: url(https://images.pexels.com/photos/712786/pexels-photo-712786.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+
+  h1{
+    color: white;
+  }
+
+  p{
+    color: white;
+  }
+
+  li{
+    color: white
+  }
+
+
+</style>
+
+
+
+
+<br><br><br>
+<h1>Tasks Page!</h1>
 
 <form action="" method="post" novalidate>
         {{ form.hidden_tag() }}
@@ -10,14 +44,21 @@
             {{ form.list.label }}<br>
             {{ form.list(size=32) }}
         </p>
+        <p>
+            {{ form.category.label }}<br>
+            {{ form.category(size=32) }}
+        </p>
+
+
 
         <p>{{ form.add() }}</p>
 
-
+<br><br><br>
+<h1>Tasks List</h1>
         {% for l in lists %}
         <div>
             <p>
-              <a class="nav-link" href= "/task"> {{ l }} <a>
+                {{ l }} -  Category: {{l.category}}
             </p>
         </div>
         {% endfor %}

@@ -1,25 +1,66 @@
 {% include "navbar.html" %}
-{% with messages = get_flashed_messages() %}
-{% if messages %}
-<ul>
-    {% for message in messages %}
-    <li>{{ message }}</li>
-    {% endfor %}
-</ul>
-{% endif %}
-{% endwith %}
-    <h1>Register</h1>
+<style media="screen">
+
+  body
+  {
+  /* The image used */
+  background-image: url(https://images.pexels.com/photos/712786/pexels-photo-712786.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+
+  h1{
+    color: white;
+  }
+
+  p{
+    color: white;
+  }
+
+  li{
+    color: white
+  }
+  ul
+  {
+    color: white
+  }
+
+</style>
+<br>
+<br>
+<br>
+<br>
+<br>
+    <h1 style="color: white; text-align: center">Register</h1>
+    <br>
     <form action="" method="post" novalidate>
         {{ form.hidden_tag() }}
 
-        <p>
-            {{ form.username.label }}<br>
+        <p style="color: white; text-align: center; margin-left: -14%">
+            {{ form.username.label }}</p>
+        <p style="color: white; text-align: center">
             {{ form.username(size=32) }}
         </p>
-        <p>
-            {{ form.password.label }}<br>
+        <p style="color: white; text-align: center; margin-left: -14%">
+            {{ form.password.label }}</p>
+        <p style="color: white; text-align: center;">
             {{ form.password(size=32) }}
         </p>
 
-        <p>{{ form.register() }}</p>
+        <p style="color: white; text-align: center">{{ form.register() }}</p>
     </form>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul style="color: white; text-align: center">
+        {% for message in messages %}
+        {{ message }}
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}

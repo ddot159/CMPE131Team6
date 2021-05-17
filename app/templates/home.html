@@ -1,12 +1,40 @@
 {% include "navbar.html" %}
 
-    <h1>Welcome to Taskr!</h1>
+<style media="screen">
+
+  body
+  {
+  /* The image used */
+  background-image: url(https://images.pexels.com/photos/712786/pexels-photo-712786.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+
+  h1{
+    color: white;
+  }
+
+  p{
+    color: white;
+  }
+
+  li{
+    color: white
+  }
+
+</style>
+<br><br><br><br><br><br>
+    <h1 style = "text-align: center">Welcome to Taskr {{current_user.username}}!</h1>
     <div>
-        <p>This is the home page for our app!</p>
+        <h3 style = "color: white; text-align: center">This is the home page for our app, explore the various features by using the options in the Navbar</h3>
     </div>
-    {% if current_user.is_authenticated %}
-      Hi {{ current_user.username }}!
-    {% endif %}
+
     <!-- {% for p in posts %}
     <div>
         <p>{{ p.author }} says: <b>{{ p.body }}</b></p>
