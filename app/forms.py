@@ -20,3 +20,9 @@ class ListForm(FlaskForm):
     list = StringField('Task Name', validators=[DataRequired()])
     add = SubmitField('Add Task')
     category = StringField('Category')
+
+
+class TaskEditForm(FlaskForm):
+    item = StringField('item', validators=[DataRequired()])
+    rename = SubmitField('Rename Task')
+    changeCategory = StringField('Change Category')

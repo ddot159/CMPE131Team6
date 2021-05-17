@@ -16,17 +16,44 @@
   background-size: cover;
   }
 
-  h1{
+  h1 {
     color: white;
+  }
+
+  h1.tasks_page {
+    color: white;
+    padding: 50px 50px 50px 50px;
   }
 
   p{
     color: white;
   }
 
+  p.task {
+    color: white;
+    float:left;
+    padding: 8px;
+  }
+
+  div.tasks {
+    padding: 8px;
+  }
+
   li{
     color: white
   }
+
+  form {
+    padding: 50px 50px 50px 50px;
+  }
+
+  a.button {
+    background-color: #008CBA;
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    padding: 8px 8px;
+}
 
 
 </style>
@@ -34,8 +61,7 @@
 
 
 
-<br><br><br>
-<h1>Tasks Page!</h1>
+<h1 class="tasks_page">Tasks Page!</h1>
 
 <form action="" method="post" novalidate>
         {{ form.hidden_tag() }}
@@ -54,12 +80,16 @@
         <p>{{ form.add() }}</p>
 
 <br><br><br>
-<h1>Tasks List</h1>
+
+
+<h1 class="task_list">Tasks List</h1>
         {% for l in lists %}
-        <div>
-            <p>
+        <div class="tasks">
+            <p class="task">
                 {{ l }} -  Category: {{l.category}}
             </p>
+            <a href="/edit" class="button">edit</a>
         </div>
+        <br>
         {% endfor %}
 </form>

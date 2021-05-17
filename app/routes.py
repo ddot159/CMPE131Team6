@@ -164,7 +164,9 @@ def list():
         return redirect('/lists')
     return render_template('lists.html', title = 'List', form=form, lists = List.query.filter_by(user=current_user))
 
-
+@myapp_obj.route("/edit", methods=['GET', 'POST'])
+def edit():
+    return render_template('edit_task.html')
 
 @myapp_obj.route("/logout")
 @login_required
