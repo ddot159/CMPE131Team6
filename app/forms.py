@@ -13,7 +13,7 @@ class LoginForm(FlaskForm):
 
 class TaskForm(FlaskForm):
     item = StringField('item', validators=[DataRequired()])
-    add = SubmitField('Add Task')
+    filter = SubmitField('filter')
 
 
 class ListForm(FlaskForm):
