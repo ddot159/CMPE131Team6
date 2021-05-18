@@ -8,12 +8,12 @@ class LoginForm(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired()])
     remember_me = BooleanField('Remember Me')
     submit = SubmitField('Sign In')
-    register = SubmitField('Register')
+    register = SubmitField('Sign Up')
 
 
 class TaskForm(FlaskForm):
     item = StringField('item', validators=[DataRequired()])
-    add = SubmitField('Add Task')
+    filter = SubmitField('filter')
 
 
 class ListForm(FlaskForm):
@@ -23,7 +23,7 @@ class ListForm(FlaskForm):
     priority = BooleanField('Priority')
 
 
-class TaskEditForm(FlaskForm):
-    item = StringField('item', validators=[DataRequired()])
-    rename = SubmitField('Rename Task')
-    changeCategory = StringField('Change Category')
+class EditForm(FlaskForm):
+    rename = StringField('New Task')
+    changeCategory = StringField('New Category')
+    edit = SubmitField('Confirm Edit')

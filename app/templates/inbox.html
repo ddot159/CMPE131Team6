@@ -36,7 +36,19 @@
     padding: 8px 8px;
   }
 
+  table, th, td {
+          border: 1px solid black;}
+        table, th, td {text-align: center;}  
+  
+   table, th, td {
+    color: white;
+    padding: 1px;
+    
+  }
 
+  p, table,th,td,tr {text-align: center;}
+  div {text-align: center;}
+      
 </style>
 
 
@@ -48,8 +60,19 @@
     </div>
     <br>
 
-        {% for t in todo %}
-        <div style="margin-left: 20px">
-            <p> {{ t }}</p>
-        </div>
-        {% endfor %}
+    {{ form.item(size=32) }}
+    {{ form.filter() }}
+</p>
+
+  <table>
+    <tr>
+        <th>Task</th>
+        <th>Date</th>
+    </tr>
+        {% for l in lists %}
+            <tr>
+                <td>{{l.name}}</td>
+                <td>{{l.date}}</td>
+            </tr>
+          {% endfor %}    
+    </table>
