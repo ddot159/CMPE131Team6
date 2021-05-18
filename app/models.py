@@ -54,7 +54,7 @@ class List(db.Model):
     tasks = db.relationship('Task', backref = 'task', lazy = 'dynamic')
 
     def __repr__(self):
-        return '{}'.format(self.name)
+        return '{}'.format(self.id)
 
 
 @login.user_loader
