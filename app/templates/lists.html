@@ -54,7 +54,7 @@
     color: white;
     font-size: 16px;
     padding: 8px 8px;}
-}
+/*}*/
 
 
 </style>
@@ -76,6 +76,9 @@
             {{ form.category(size=32) }}
         </p>
 
+        <p>
+          {{ form.priority() }} {{ form.priority.label }}
+        </p>
 
 
         <p>{{ form.add() }}</p>

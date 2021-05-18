@@ -20,6 +20,7 @@ class ListForm(FlaskForm):
     list = StringField('Task Name', validators=[DataRequired()])
     add = SubmitField('Add Task')
     category = StringField('Category')
+    priority = BooleanField('Priority')
 
 
 class TaskEditForm(FlaskForm):

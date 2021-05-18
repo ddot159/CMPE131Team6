@@ -50,6 +50,7 @@ class List(db.Model):
     name = db.Column(db.String(256), unique=False, nullable=False)
     date = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     category = db.Column(db.String(256), unique=False, nullable=False)
+    priority = db.Column(db.Boolean, unique=False, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     tasks = db.relationship('Task', backref = 'task', lazy = 'dynamic')
 
