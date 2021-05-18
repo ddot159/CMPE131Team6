@@ -87,7 +87,7 @@
         {% for l in lists %}
         <div class="tasks">
             <p class="task">
-                {{ l }} -  Category: {{l.category}}
+                {{ l.name }} -  Category: {{l.category}}
             </p>
             <a href="/edit/{{l.name}}" class="button">edit</a>
             <a href="/delete/{{l.name}}" class="button" onclick="return confirm('Are you sure you want to delete this task?');">delete</a>
