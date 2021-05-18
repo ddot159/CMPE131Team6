@@ -1,15 +1,7 @@
 
 
 {% include "navbar.html" %}
-{% with messages = get_flashed_messages() %}
-{% if messages %}
-<ul>
-    {% for message in messages %}
-    <li>{{ message }}</li>
-    {% endfor %}
-</ul>
-{% endif %}
-{% endwith %}
+
 <html>
 
 <style media="screen">
@@ -41,6 +33,11 @@
     color: white
   }
 
+  ul
+  {
+    color: white;
+  }
+
 
 </style>
 
@@ -49,6 +46,7 @@
 <body style = " ">
 
   <br><br><br><br><br>
+
   <h1 style="color: white; text-align: center">Log In</h1>
   <br>
   <form action="" method="post" novalidate>
@@ -66,6 +64,15 @@
         <p style="color: white; text-align: center; margin-left: -10%">{{ form.remember_me() }} {{ form.remember_me.label }}</p>
         <p style="color: white; text-align: center">{{ form.submit() }}</p>
   </form>
-  <p style="color: white; text-align: center; margin-left: 0%">Don't have and account?<a href="register"> register</a></p>
+  <p style="color: white; text-align: center; margin-left: 0%">Don't have an account?<a href="register"> register</a></p>
   </body>
   </html>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <ul style="text-align:center">
+      {% for message in messages %}
+        <h5 style = "color: red">{{ message }}!</h5>
+      {% endfor %}
+  </ul>
+  {% endif %}
+  {% endwith %}

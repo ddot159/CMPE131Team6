@@ -29,15 +29,25 @@
     color: white
   }
 
+  a.button {
+    background-color: #008CBA;
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    padding: 8px 8px;}
+
 
 </style>
+
 <br><br><br><br><br>
 <center><h1>{{na}} category</h1>
 
 {% for c in cates %}
 <div>
     <p style="margin-left:25px">
-        <h3 style="color: white"><i><b>{{ c.name}}</b></i></h3>
+        <h3 style="color: white"><i><b>{{ c.name}}</b></i>
+            <a style="margin-left:20px" href="/delete/{{c.name}}" class="button" onclick="return confirm('Are you sure you want to delete this task?');">    delete</a>
+        </h3>
     </p>
 </div>
 {% endfor %}</center>

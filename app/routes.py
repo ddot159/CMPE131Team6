@@ -7,7 +7,7 @@ from datetime import timedelta
 from app import db
 
 from app import myapp_obj
-from app.forms import LoginForm, TaskForm, ListForm
+from app.forms import LoginForm, TaskForm, ListForm, EditForm
 
 from app.models import User, Task, List
 
@@ -122,9 +122,9 @@ def register():
 
 @myapp_obj.route("/inbox", methods=['GET', 'POST'])
 def inbox():
-    t = List.query.filter_by(user = current_user)
+    l = List.query.filter_by(user = current_user)
 
-    return render_template('inbox.html', title='Inbox', todo = t)
+    return render_template('inbox.html', title='Inbox', todo = l)
 
 # lists = []
 @myapp_obj.route("/lists", methods=['GET', 'POST'])
@@ -144,9 +144,44 @@ def list():
         return redirect('/lists')
     return render_template('lists.html', title = 'List', form=form, lists = List.query.filter_by(user=current_user))
 
-@myapp_obj.route("/edit", methods=['GET', 'POST'])
-def edit():
-    return render_template('edit_task.html')
+@myapp_obj.route("/delete/<string:task>")
+def delete(task):
+    task = List.query.filter_by(name = task, user = current_user).first()
+    db.session.delete(task)
+    db.session.commit()
+    return redirect('/lists')
+
+
+
+@myapp_obj.route("/edit/<string:task>", methods=['GET', 'POST'])
+def edit(task):
+    ta = List.query.filter_by(name = task, user = current_user).first()
+    form = EditForm()
+    if form.validate_on_submit():
+
+        if form.rename.data != "" and form.changeCategory.data != "":
+            ta.name = form.rename.data
+            ta.category = form.changeCategory.data
+            db.session.add(ta)
+            db.session.commit()
+        elif form.rename.data != "":
+            # t = List(name = form.rename.data, category = ta.category, user = current_user)
+            ta.name = form.rename.data
+            db.session.add(ta)
+            db.session.commit()
+        elif form.changeCategory.data != "":
+            # t = List(name = ta.name, category = form.changeCategory.data, user = current_user)
+            ta.category = form.changeCategory.data
+            db.session.add(ta)
+            db.session.commit()
+        else:
+            return redirect('/lists')
+
+        return redirect('/lists')
+
+
+
+    return render_template('edit_task.html', form = form)
 
 @myapp_obj.route("/logout")
 @login_required

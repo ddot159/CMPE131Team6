@@ -30,12 +30,26 @@
   }
 
 
+
 </style>
 
-    <h1>EDIT PAGE</h1>
 
-</head>
-<body>
+       <h1>Edit Task: {{name}}</h1>
 
-</body>
-</html>
+       <form action="" method="post" novalidate>
+               {{ form.hidden_tag() }}
+
+               <p>
+                   {{ form.rename.label }}<br>
+                   {{ form.rename(size=32) }}
+               </p>
+               <p>
+                   {{ form.changeCategory.label }}<br>
+                   {{ form.changeCategory(size=32) }}
+               </p>
+
+
+
+               <p class="button">{{ form.edit() }}</p>
+      </form>
+      
