@@ -122,21 +122,21 @@ def register():
 
 @myapp_obj.route("/inbox", methods=['GET', 'POST'])
 def inbox():
-    
+
     form = TaskForm()
     List.query.all()
     todo = List.query.filter_by(name = form.item.data).first()
-   
+
     if form.validate_on_submit():
-        
+
         if todo is None:
             flash('does not exist')
-            return redirect('/inbox') 
-      
+            return redirect('/inbox')
+
         else:
             todo = todo
             return render_template('filter.html', title='Filter', form = form, todo = todo)
-    
+
     return render_template('inbox.html', title='Inbox',  lists = List.query.filter_by(user=current_user), form = form, todo = todo)
 
 # lists = []
@@ -148,7 +148,7 @@ def list():
 
         if list_name is None:
             new_list = List(name=form.list.data, category = form.category.data, priority = form.priority.data, created = form.start.data, due = form.end.data, user = current_user)
-            new_cat = Task(item=form.category.data, task_name = form.list.data, user =current_user)
+
 
             db.session.add(new_list)
             db.session.commit()
@@ -164,7 +164,25 @@ def delete(task):
     db.session.commit()
     return redirect('/lists')
 
+@myapp_obj.route("/delacc")
+def delacc():
+    task = List.query.filter_by(user = current_user)
+    for t in task:
+        db.session.delete(t)
+        db.session.commit()
+    db.session.delete(current_user)
+    db.session.commit()
+    flash('Your account has been successfully deleted!')
+    logout_user()
+    return redirect('/')
 
+@myapp_obj.route("/completion/<string:task>")
+def completion(task):
+    task = List.query.filter_by(name = task, user = current_user).first()
+    task.task_status = 1;
+    db.session.add(task)
+    db.session.commit()
+    return redirect('/lists')
 
 @myapp_obj.route("/edit/<string:task>", methods=['GET', 'POST'])
 def edit(task):

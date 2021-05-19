@@ -55,7 +55,21 @@
     font-size: 16px;
     padding: 8px 8px;}
 /*}*/
+  a.button1 {
+    background-color: white;
+    border-radius: 12px;
+    color: black;
+    font-size: 16px;
+    padding: 8px 8px;}
 
+  a.button2
+  {
+    background-color: green;
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    padding: 8px 8px;
+  }
 
 </style>
 
@@ -104,19 +118,26 @@
           {% if l.priority == 1 %}
             <p class="task">
 
-              *** {{ l.name }} -  Category: {{l.category}} ***
+              *** {{ l.name }} &nbsp;&nbsp;-  &nbsp;&nbsp;Category: &nbsp;{{l.category}} ***
 
             </p>
           {% else %}
           <p class="task">
-            {{ l.name }} -  Category: {{l.category}}
+            {{ l.name }}&nbsp;&nbsp; -  &nbsp;&nbsp; Category: &nbsp;{{l.category}}
 
            </p>
           {% endif %}
-
-          <a href="/edit/{{l.name}}" class="button">edit</a>
-          <a href="/delete/{{l.name}}" class="button" onclick="return confirm('Are you sure you want to delete this task?');">delete</a>        </div>
-
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="/edit/{{l.name}}" class="button">edit </a>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="/delete/{{l.name}}" class="button" onclick="return confirm('Are you sure you want to delete this task?');">delete </a>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          {% if l.task_status == none %}
+          <a href="/completion/{{l.name}}" class="button1"> Mark Completion</a>
+          {% else %}
+          <a href="" class="button2"> Completed </a>
+          {% endif %}
+        </div>
         <br>
         {% endfor %}
 </form>
