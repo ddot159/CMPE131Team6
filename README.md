@@ -75,3 +75,7 @@ The inbox lists the tasks that were added from the task page. It has a refresh b
 
 
 
+### Priority Markers
+
+When creating a task, the user has the ability to check the "Priority" box which will add two asterisks around the task, signifying it's priority. 
+
