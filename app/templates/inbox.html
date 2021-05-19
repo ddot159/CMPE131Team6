@@ -73,12 +73,18 @@
   <table>
     <tr>
         <th>Task</th>
-        <th>Date</th>
+        <th>Date Created</th>
+        <th>Due Date</th>
+        <th>Category</th>
+        <th>Priority</th>
     </tr>
         {% for l in lists %}
             <tr>
                 <td>{{l.name}}</td>
-                <td>{{l.date}}</td>
+                <td>{{l.created}}</td>
+                <td>{{l.due}}</td>
+                <td>{{l.category}}</td>
+                <td>{{l.priority}}</td>
             </tr>
           {% endfor %}
     </table>

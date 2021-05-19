@@ -40,7 +40,7 @@ class Task(db.Model):
     #user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     task_name = db.Column(db.String, db.ForeignKey('list.name'))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-
+    
     def __repr__(self):
         return '<Task {}>'.format(self.item)
 
@@ -53,7 +53,8 @@ class List(db.Model):
     priority = db.Column(db.Boolean, unique=False, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     tasks = db.relationship('Task', backref = 'task', lazy = 'dynamic')
-
+    created = db.Column(db.DateTime)
+    due = db.Column(db.DateTime)
     def __repr__(self):
         return '{}'.format(self.id)
 

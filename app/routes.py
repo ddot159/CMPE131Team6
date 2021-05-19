@@ -126,16 +126,17 @@ def inbox():
     form = TaskForm()
     List.query.all()
     todo = List.query.filter_by(name = form.item.data).first()
-    
+   
     if form.validate_on_submit():
         
         if todo is None:
             flash('does not exist')
             return redirect('/inbox') 
-            
+      
         else:
             todo = todo
             return render_template('filter.html', title='Filter', form = form, todo = todo)
+    
     return render_template('inbox.html', title='Inbox',  lists = List.query.filter_by(user=current_user), form = form, todo = todo)
 
 # lists = []
@@ -146,7 +147,7 @@ def list():
         list_name = List.query.filter_by(name=form.list.data, user = current_user).first()
 
         if list_name is None:
-            new_list = List(name=form.list.data, category = form.category.data, priority = form.priority.data, user = current_user)
+            new_list = List(name=form.list.data, category = form.category.data, priority = form.priority.data, created = form.start.data, due = form.end.data, user = current_user)
             new_cat = Task(item=form.category.data, task_name = form.list.data, user =current_user)
 
             db.session.add(new_list)

@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, DateField
 from wtforms.validators import DataRequired
 
 
@@ -13,7 +13,7 @@ class LoginForm(FlaskForm):
 
 class TaskForm(FlaskForm):
     item = StringField('item', validators=[DataRequired()])
-    filter = SubmitField('filter')
+    filter = SubmitField('Filter')
 
 
 class ListForm(FlaskForm):
@@ -21,9 +21,12 @@ class ListForm(FlaskForm):
     add = SubmitField('Add Task')
     category = StringField('Category')
     priority = BooleanField('Priority')
-
+    start = DateField('Date Created', format='%Y-%m-%d', validators=[DataRequired()])
+    end = DateField('Due Date', format='%Y-%m-%d', validators=[DataRequired()])
+    
 
 class EditForm(FlaskForm):
     rename = StringField('New Task')
     changeCategory = StringField('New Category')
     edit = SubmitField('Confirm Edit')
+
