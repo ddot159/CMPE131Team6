@@ -184,6 +184,14 @@ def completion(task):
     db.session.commit()
     return redirect('/lists')
 
+@myapp_obj.route("/incompletion/<string:task>")
+def incompletion(task):
+    task = List.query.filter_by(name = task, user = current_user).first()
+    task.task_status = 0;
+    db.session.add(task)
+    db.session.commit()
+    return redirect('/lists')
+
 @myapp_obj.route("/edit/<string:task>", methods=['GET', 'POST'])
 def edit(task):
     ta = List.query.filter_by(name = task, user = current_user).first()
