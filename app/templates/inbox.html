@@ -38,18 +38,22 @@
 
   table, th, td {
           border: 1px solid black;}
-        table, th, td {text-align: center;}  
-  
+        table, th, td {text-align: center;}
+
    table, th, td {
     color: white;
     padding: 1px;
-    
+
   }
 
   p, table,th,td,tr {text-align: center;}
   div {text-align: center;}
-      
+
 </style>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 
 
 <form action="" method="post" novalidate>
@@ -76,7 +80,7 @@
                 <td>{{l.name}}</td>
                 <td>{{l.date}}</td>
             </tr>
-          {% endfor %}    
+          {% endfor %}
     </table>
 </form>
 
