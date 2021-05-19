@@ -96,6 +96,10 @@
         <p>
           {{ form.priority() }} {{ form.priority.label }}
         </p>
+        <p>
+          {{ form.colorR() }} {{ form.colorR.label }} {{ form.colorG() }} {{ form.colorG.label }} {{ form.colorB() }} {{ form.colorB.label }}
+        </p>
+   
 
         <p>
           {{ form.start() }} {{ form.start.label }}
@@ -115,18 +119,138 @@
 <h1 class="task_list">Tasks List</h1>
         {% for l in lists %}
         <div class="tasks">
-          {% if l.priority == 1 %}
+          {% if l.colorR == 1 and l.colorG == 0 and l.colorB == 0 %}
+            {% if l.priority == 1 %}
+              <p class="task" style="color:#FA8072";>
+
+                *** {{ l.name }} &nbsp;&nbsp;-  &nbsp;&nbsp;Category: &nbsp;{{l.category}} ***
+
+              </p>
+
+            {% else %}
+              <p class="task" style="color:#FA8072";>
+                {{ l.name }}&nbsp;&nbsp; -  &nbsp;&nbsp; Category: &nbsp;{{l.category}}
+
+              </p>
+            {% endif %}
+          {% endif %}
+
+          {% if l.colorG == 1 and l.colorR == 0 and l.colorB == 0 %}
+            {% if l.priority == 1 %}
+              <p class="task" style="color:#32CD32";>
+
+                *** {{ l.name }} &nbsp;&nbsp;-  &nbsp;&nbsp;Category: &nbsp;{{l.category}} ***
+
+              </p>
+
+            {% else %}
+              <p class="task" style="color:#32CD32";>
+                {{ l.name }}&nbsp;&nbsp; -  &nbsp;&nbsp; Category: &nbsp;{{l.category}}
+
+              </p>
+            {% endif %}
+          {% endif %}
+
+          {% if l.colorB == 1 and l.colorR == 0 and l.colorG == 0 %}
+            {% if l.priority == 1 %}
+              <p class="task" style="color:#6495ED";>
+
+                *** {{ l.name }} &nbsp;&nbsp;-  &nbsp;&nbsp;Category: &nbsp;{{l.category}} ***
+
+              </p>
+
+            {% else %}
+              <p class="task" style="color:#6495ED";>
+                {{ l.name }}&nbsp;&nbsp; -  &nbsp;&nbsp; Category: &nbsp;{{l.category}}
+
+              </p>
+            {% endif %}
+          {% endif %}
+
+          
+
+          {% if l.colorR == 1 and l.colorG == 1  and l.colorB == 0 %}
+            {% if l.priority == 1 %}
+              <p class="task" style="color:#FFFF00";>
+
+                *** {{ l.name }} &nbsp;&nbsp;-  &nbsp;&nbsp;Category: &nbsp;{{l.category}} ***
+
+              </p>
+
+            {% else %}
+              <p class="task" style="color:#FFFF00";>
+                {{ l.name }}&nbsp;&nbsp; -  &nbsp;&nbsp; Category: &nbsp;{{l.category}}
+
+              </p>
+            {% endif %}
+          {% endif %}          
+
+          {% if l.colorR == 1 and l.colorB == 1 and l.colorG == 0%}
+            {% if l.priority == 1 %}
+              <p class="task" style="color:#9400D3";>
+
+                *** {{ l.name }} &nbsp;&nbsp;-  &nbsp;&nbsp;Category: &nbsp;{{l.category}} ***
+
+              </p>
+
+            {% else %}
+              <p class="task" style="color:#9400D3";>
+                {{ l.name }}&nbsp;&nbsp; -  &nbsp;&nbsp; Category: &nbsp;{{l.category}}
+
+              </p>
+            {% endif %}
+          {% endif %}          
+
+          {% if l.colorG == 1 and l.colorB == 1 and l.colorR == 0%}
+            {% if l.priority == 1 %}
+              <p class="task" style="color:#7FFFD4";>
+
+                *** {{ l.name }} &nbsp;&nbsp;-  &nbsp;&nbsp;Category: &nbsp;{{l.category}} ***
+
+              </p>
+
+            {% else %}
+              <p class="task" style="color:#7FFFD4";>
+                {{ l.name }}&nbsp;&nbsp; -  &nbsp;&nbsp; Category: &nbsp;{{l.category}}
+
+              </p>
+            {% endif %}
+          {% endif %}
+          
+          {% if l.colorR == 1 and l.colorG == 1 and l.colorB == 1 %}
+            {% if l.priority == 1 %}
             <p class="task">
 
               *** {{ l.name }} &nbsp;&nbsp;-  &nbsp;&nbsp;Category: &nbsp;{{l.category}} ***
 
             </p>
-          {% else %}
-          <p class="task">
-            {{ l.name }}&nbsp;&nbsp; -  &nbsp;&nbsp; Category: &nbsp;{{l.category}}
 
-           </p>
+            {% else %}
+            <p class="task">
+              {{ l.name }}&nbsp;&nbsp; -  &nbsp;&nbsp; Category: &nbsp;{{l.category}}
+
+            </p>
+            {% endif %}
           {% endif %}
+
+          {% if l.colorR == 0 and l.colorG == 0 and l.colorB == 0 %}
+            {% if l.priority == 1 %}
+            <p class="task">
+
+              *** {{ l.name }} &nbsp;&nbsp;-  &nbsp;&nbsp;Category: &nbsp;{{l.category}} ***
+
+            </p>
+
+            {% else %}
+            <p class="task">
+              {{ l.name }}&nbsp;&nbsp; -  &nbsp;&nbsp; Category: &nbsp;{{l.category}}
+
+            </p>
+            {% endif %}
+          {% endif %}
+
+
+
           &nbsp;&nbsp;&nbsp;&nbsp;
           <a href="/edit/{{l.name}}" class="button">edit </a>
           &nbsp;&nbsp;&nbsp;&nbsp;

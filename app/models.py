@@ -56,6 +56,9 @@ class List(db.Model):
     created = db.Column(db.DateTime)
     due = db.Column(db.DateTime)
     task_status = db.Column(db.Boolean, unique=False, nullable=True)
+    colorR = db.Column(db.Boolean, unique=False, nullable=False)
+    colorG = db.Column(db.Boolean, unique=False, nullable=False)
+    colorB = db.Column(db.Boolean, unique=False, nullable=False)
     def __repr__(self):
         return '{}'.format(self.id)
 

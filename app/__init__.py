@@ -27,3 +27,6 @@ login = LoginManager(myapp_obj)
 login.login_view = 'login'
 
 from app import routes, models
+
+from flaskext.markdown import Markdown
+Markdown(myapp_obj)

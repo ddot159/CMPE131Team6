@@ -147,7 +147,7 @@ def list():
         list_name = List.query.filter_by(name=form.list.data, user = current_user).first()
 
         if list_name is None:
-            new_list = List(name=form.list.data, category = form.category.data, priority = form.priority.data, created = form.start.data, due = form.end.data, user = current_user)
+            new_list = List(name=form.list.data, category = form.category.data, priority = form.priority.data, colorR = form.colorR.data, colorG = form.colorG.data, colorB = form.colorB.data, created = form.start.data, due = form.end.data, user = current_user)
 
 
             db.session.add(new_list)
