@@ -79,3 +79,8 @@ The inbox lists the tasks that were added from the task page. It has a refresh b
 
 When creating a task, the user has the ability to check the "Priority" box which will add two asterisks around the task, signifying it's priority. 
 
+
+
+### Color Formatting for Task
+
+When creating a task, the user has the ability to choose whether they want their task to be listed in red, green, blue or any combination of the colors! It is as simple as checking the box or boxes next to the colors they want.
