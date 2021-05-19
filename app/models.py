@@ -48,12 +48,12 @@ class Task(db.Model):
 class List(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(256), unique=False, nullable=False)
-    date = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    date = db.Column(db.DateTime, index=True, default=datetime.now)
     category = db.Column(db.String(256), unique=False, nullable=False)
     priority = db.Column(db.Boolean, unique=False, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     tasks = db.relationship('Task', backref = 'task', lazy = 'dynamic')
-    created = db.Column(db.DateTime)
+    created = db.Column(db.DateTime, nullable = True)
     due = db.Column(db.DateTime)
     task_status = db.Column(db.Boolean, unique=False, nullable=True)
     def __repr__(self):

@@ -147,7 +147,7 @@ def list():
         list_name = List.query.filter_by(name=form.list.data, user = current_user).first()
 
         if list_name is None:
-            new_list = List(name=form.list.data, category = form.category.data, priority = form.priority.data, created = form.start.data, due = form.end.data, user = current_user)
+            new_list = List(name=form.list.data, category = form.category.data, priority = form.priority.data, due = form.end.data, user = current_user)
 
 
             db.session.add(new_list)
@@ -198,7 +198,26 @@ def edit(task):
     form = EditForm()
     if form.validate_on_submit():
 
-        if form.rename.data != "" and form.changeCategory.data != "":
+        if form.rename.data != "" and form.changeCategory.data != "" and form.newDate.data != "":
+            ta.name = form.rename.data
+            ta.category = form.changeCategory.data
+            ta.due = form.newDate.data
+            db.session.add(ta)
+            db.session.commit()
+        elif form.rename.data != "" and form.newDate.data != "":
+            # t = List(name = form.rename.data, category = ta.category, user = current_user)
+            ta.name = form.rename.data
+            ta.due = form.newDate.data
+            db.session.add(ta)
+            db.session.commit()
+        elif form.changeCategory.data != "" and form.newDate.data != "":
+            # t = List(name = ta.name, category = form.changeCategory.data, user = current_user)
+            ta.category = form.changeCategory.data
+            ta.due = form.newDate.data
+            db.session.add(ta)
+            db.session.commit()
+        elif form.rename.data != "" and form.changeCategory.data != "":
+            # t = List(name = form.rename.data, category = ta.category, user = current_user)
             ta.name = form.rename.data
             ta.category = form.changeCategory.data
             db.session.add(ta)
@@ -209,8 +228,13 @@ def edit(task):
             db.session.add(ta)
             db.session.commit()
         elif form.changeCategory.data != "":
-            # t = List(name = ta.name, category = form.changeCategory.data, user = current_user)
+            # t = List(name = form.rename.data, category = ta.category, user = current_user)
             ta.category = form.changeCategory.data
+            db.session.add(ta)
+            db.session.commit()
+        elif form.newDate.data != "":
+            # t = List(name = form.rename.data, category = ta.category, user = current_user)
+            ta.due = form.newDate.data
             db.session.add(ta)
             db.session.commit()
         else:

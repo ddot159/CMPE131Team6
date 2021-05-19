@@ -21,12 +21,11 @@ class ListForm(FlaskForm):
     add = SubmitField('Add Task')
     category = StringField('Category')
     priority = BooleanField('Priority')
-    start = DateField('Date Created', format='%Y-%m-%d', validators=[DataRequired()])
     end = DateField('Due Date', format='%Y-%m-%d', validators=[DataRequired()])
-    
+
 
 class EditForm(FlaskForm):
     rename = StringField('New Task')
     changeCategory = StringField('New Category')
+    newDate = DateField('New Deadline (Required)', format='%Y-%m-%d')
     edit = SubmitField('Confirm Edit')
-
