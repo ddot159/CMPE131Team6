@@ -132,10 +132,11 @@
           &nbsp;&nbsp;&nbsp;&nbsp;
           <a href="/delete/{{l.name}}" class="button" onclick="return confirm('Are you sure you want to delete this task?');">delete </a>
           &nbsp;&nbsp;&nbsp;&nbsp;
-          {% if l.task_status == 0 %}
-          <a href="/completion/{{l.name}}" class="button1"> Mark Completion</a>
-          {% else %}
+          {% if l.task_status == 1 %}
           <a href="/incompletion/{{l.name}}" class="button2"> Unmark </a>
+
+          {% else %}
+          <a href="/completion/{{l.name}}" class="button1"> Mark Completion</a>
           {% endif %}
         </div>
         <br>
