@@ -21,6 +21,9 @@ class ListForm(FlaskForm):
     add = SubmitField('Add Task')
     category = StringField('Category')
     priority = BooleanField('Priority')
+    colorR = BooleanField('Red')
+    colorG = BooleanField('Green')
+    colorB = BooleanField('Blue')
     end = DateField('Due Date', format='%Y-%m-%d', validators=[DataRequired()])
 
 
