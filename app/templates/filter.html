@@ -51,7 +51,6 @@
       
 </style>
 
-
 <form action="" method="post" novalidate>
   {{ form.hidden_tag() }}
     <br><br><br>
@@ -71,21 +70,11 @@
         <th>Task</th>
         <th>Date</th>
     </tr>
-        {% for l in lists %}
+        
             <tr>
-                <td>{{l.name}}</td>
-                <td>{{l.date}}</td>
+                <td>{{todo.name}}</td>
+                <td>{{todo.date}}</td>
             </tr>
-          {% endfor %}    
+            
     </table>
 </form>
-
-{% with messages = get_flashed_messages() %}
-{% if messages %}
-<ul style="color: white; text-align: center">
-    {% for message in messages %}
-      <h5 style = "color: red">{{ message }}</h5>
-    {% endfor %}
-</ul>
-{% endif %}
-{% endwith %}
