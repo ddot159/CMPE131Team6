@@ -122,20 +122,21 @@ def register():
 
 @myapp_obj.route("/inbox", methods=['GET', 'POST'])
 def inbox():
-    l = List.query.filter_by(user = current_user)
-    l = List.query.all()
+    
     form = TaskForm()
-
-    todo = List.query.filter_by(name=form.item.data, user = current_user).first()
+    List.query.all()
+    todo = List.query.filter_by(name = form.item.data).first()
     
     if form.validate_on_submit():
-    
+        
         if todo is None:
-            print('does not exist')
-            return redirect('/inbox')
-        else: 
-            return todo.name
-    return render_template('inbox.html', title='Inbox',  lists = List.query.filter_by(user=current_user), form = form)
+            flash('does not exist')
+            return redirect('/inbox') 
+            
+        else:
+            todo = todo
+            return render_template('filter.html', title='Filter', form = form, todo = todo)
+    return render_template('inbox.html', title='Inbox',  lists = List.query.filter_by(user=current_user), form = form, todo = todo)
 
 # lists = []
 @myapp_obj.route("/lists", methods=['GET', 'POST'])
