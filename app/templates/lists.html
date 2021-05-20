@@ -71,12 +71,182 @@
     padding: 8px 8px;
   }
 
+  h1.results {
+      padding: 8px;
+      right: 50px;
+      font-size: 18px;
+  }
+
 </style>
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
+
+{% if searched %}
+
+<h1 class="results">Search Results:</h1>
+<br />
+{% if not searched %}
+    <h1 class="results">No Results</h1>
+    <br />
+{% endif %}
+
+  {% for x in searched %}
+    <div class="tasks">
+      {% if x.colorR == 1 and x.colorG == 0 and x.colorB == 0 %}
+            {% if x.priority == 1 %}
+              <p class="task" style="color:#FA8072";>
+
+                *** {{ x.name }} &nbsp;&nbsp;-  &nbsp;&nbsp;Category: &nbsp;{{x.category}} ***
+
+              </p>
+
+            {% else %}
+              <p class="task" style="color:#FA8072";>
+                {{ x.name }}&nbsp;&nbsp; -  &nbsp;&nbsp; Category: &nbsp;{{x.category}}
+
+              </p>
+
+            {% endif %}
+          {% endif %}
+
+          {% if x.colorG == 1 and x.colorR == 0 and x.colorB == 0 %}
+            {% if x.priority == 1 %}
+              <p class="task" style="color:#32CD32";>
+
+                *** {{ x.name }} &nbsp;&nbsp;-  &nbsp;&nbsp;Category: &nbsp;{{x.category}} ***
+
+              </p>
+
+            {% else %}
+              <p class="task" style="color:#32CD32";>
+                {{ x.name }}&nbsp;&nbsp; -  &nbsp;&nbsp; Category: &nbsp;{{x.category}}
+
+              </p>
+
+            {% endif %}
+          {% endif %}
+
+          {% if x.colorB == 1 and x.colorR == 0 and x.colorG == 0 %}
+            {% if x.priority == 1 %}
+              <p class="task" style="color:#6495ED";>
+
+                *** {{ x.name }} &nbsp;&nbsp;-  &nbsp;&nbsp;Category: &nbsp;{{x.category}} ***
+
+              </p>
+
+            {% else %}
+              <p class="task" style="color:#6495ED";>
+                {{ x.name }}&nbsp;&nbsp; -  &nbsp;&nbsp; Category: &nbsp;{{x.category}}
+
+              </p>
+
+            {% endif %}
+          {% endif %}
+
+
+
+          {% if x.colorR == 1 and x.colorG == 1  and x.colorB == 0 %}
+            {% if x.priority == 1 %}
+              <p class="task" style="color:#FFFF00";>
+
+                *** {{ x.name }} &nbsp;&nbsp;-  &nbsp;&nbsp;Category: &nbsp;{{x.category}} ***
+
+              </p>
+
+            {% else %}
+              <p class="task" style="color:#FFFF00";>
+                {{ x.name }}&nbsp;&nbsp; -  &nbsp;&nbsp; Category: &nbsp;{{x.category}}
+
+              </p>
+
+            {% endif %}
+          {% endif %}
+
+          {% if x.colorR == 1 and x.colorB == 1 and x.colorG == 0%}
+            {% if x.priority == 1 %}
+              <p class="task" style="color:#9400D3";>
+
+                *** {{ x.name }} &nbsp;&nbsp;-  &nbsp;&nbsp;Category: &nbsp;{{x.category}} ***
+
+              </p>
+
+            {% else %}
+              <p class="task" style="color:#9400D3";>
+                {{ x.name }}&nbsp;&nbsp; -  &nbsp;&nbsp; Category: &nbsp;{{x.category}}
+
+              </p>
+
+            {% endif %}
+          {% endif %}
+
+          {% if x.colorG == 1 and x.colorB == 1 and x.colorR == 0%}
+            {% if x.priority == 1 %}
+              <p class="task" style="color:#7FFFD4";>
+
+                *** {{ x.name }} &nbsp;&nbsp;-  &nbsp;&nbsp;Category: &nbsp;{{x.category}} ***
+
+              </p>
+
+            {% else %}
+              <p class="task" style="color:#7FFFD4";>
+                {{ x.name }}&nbsp;&nbsp; -  &nbsp;&nbsp; Category: &nbsp;{{x.category}}
+
+              </p>
+
+            {% endif %}
+          {% endif %}
+
+          {% if x.colorR == 1 and x.colorG == 1 and x.colorB == 1 %}
+            {% if x.priority == 1 %}
+            <p class="task">
+
+              *** {{ x.name }} &nbsp;&nbsp;-  &nbsp;&nbsp;Category: &nbsp;{{x.category}} ***
+
+            </p>
+
+            {% else %}
+            <p class="task">
+              {{ x.name }}&nbsp;&nbsp; -  &nbsp;&nbsp; Category: &nbsp;{{x.category}}
+
+            </p>
+
+            {% endif %}
+          {% endif %}
+
+          {% if x.colorR == 0 and x.colorG == 0 and x.colorB == 0 %}
+            {% if x.priority == 1 %}
+            <p class="task">
+
+              *** {{ x.name }} &nbsp;&nbsp;-  &nbsp;&nbsp;Category: &nbsp;{{x.category}} ***
+
+            </p>
+            <br />
+            {% else %}
+            <p class="task">
+              {{ x.name }}&nbsp;&nbsp; -  &nbsp;&nbsp; Category: &nbsp;{{x.category}}
+
+            </p>
+            {% endif %}
+          {% endif %}
+
+
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="/edit/{{x.name}}" class="button">edit </a>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="/delete/{{x.name}}" class="button" onclick="return confirm('Are you sure you want to delete this task?');">delete </a>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          {% if x.task_status == 1 %}
+          <a href="/incompletion/{{x.name}}" class="button2"> Unmark </a>
+          {% else %}
+          <a href="/completion/{{x.name}}" class="button1"> Mark Completion</a>
+          {% endif %}
+        </div>
+        <br />
+  {% endfor %}
+{% endif %}
 
 
 <h1 class="tasks_page">Tasks Page!</h1>

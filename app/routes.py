@@ -143,6 +143,13 @@ def inbox():
 @myapp_obj.route("/lists", methods=['GET', 'POST'])
 def list():
     form = ListForm()
+    q = request.args.get('q')
+
+    if q:
+        searched_list = List.query.filter(List.name.contains(q))
+    else:
+        searched_list = None
+
     if form.validate_on_submit():
         list_name = List.query.filter_by(name=form.list.data, user = current_user).first()
 
@@ -155,7 +162,7 @@ def list():
 
         # lists = List.query.filter_by(user=current_user)
         return redirect('/lists')
-    return render_template('lists.html', title = 'List', form=form, lists = List.query.filter_by(user=current_user))
+    return render_template('lists.html', title = 'List', form=form, searched=searched_list, lists = List.query.filter_by(user=current_user))
 
 @myapp_obj.route("/delete/<string:task>")
 def delete(task):
