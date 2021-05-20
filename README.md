@@ -100,7 +100,7 @@ For enabling a mobile version, we just added the required meta tag to the all th
 
 ### Inbox
 
-The inbox lists the tasks that were added from the task page. It has a refresh button that refreshes the page. If a task is added in another tab from the add task function, a refresh will update the inbox.
+The inbox lists the tasks that were added from the task page. It has a refresh button that refreshes the page. If a task is added in another tab from the add task function, a refresh will update the inbox. Also displays a task and its associated elements.
 
 
 
@@ -125,3 +125,7 @@ When creating a task, the user has the ability to choose whether they want their
 ### Delete account
 
 If the users feel the need to delete their account because of any reason, they always have an option to do that in the dropdown menu of the navbar, using this option results in the website showing a confirmation pop-up which briefly explains the outcome of proceeding. If they wish to proceed with the action, their data/credentials get deleted from the website's database and they are no longer a valid user. 
+
+### Filtering 
+
+The precondition is to be in the inbox. A user might remember a specific task they want to pull up and it can be done using the filter search bar. The filtering field filters by the task name but will display other elements associated with it like its category or due date. It is case-sensitive so the user will have to search for the task inputted or it will return a does not exist message. Users can continuously use the filter button afterwards to search for additional tasks.
