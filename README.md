@@ -99,4 +99,4 @@ The precondition is to be in the inbox. A user might remember a specific task th
 
 ### Search Bar
 
-If the user has a huge list of tasks they have the option to search for a specific task or tasks. Simply type in the search bar while on the list pag and the results will pop up. The user can find the results seperate from the long list of all tasks so that they don't mix them up.
+If the user has a huge list of tasks they have the option to search for a specific task or tasks. Simply type in the search bar while on the list page and the results will pop up. The user can find the results separate from the long list of all tasks so that they don't mix them up.
