@@ -37,14 +37,11 @@
   }
 
   table, th, td {
-          border: 1px solid black;}
-        table, th, td {text-align: center;}
+  border: 5px solid white;
+  border-collapse: collapse;
+}
 
-   table, th, td {
-    color: white;
-    padding: 1px;
 
-  }
 
   p, table,th,td,tr {text-align: center;}
   div {text-align: center;}
@@ -53,6 +50,7 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {{share.load()}}
 </head>
 
 
@@ -69,8 +67,9 @@
     {{ form.item(size=32) }}
     {{ form.filter() }}
 
-
-  <table>
+    <br>
+  <table style=" color: white">
+<br>
     <tr>
         <th>Task</th>
         <th>Date Created</th>
@@ -99,3 +98,5 @@
 </ul>
 {% endif %}
 {% endwith %}
+
+<h2 style ="color:white; text-align:center; margin-left: 77%; margin-top: 28%">{{ share.create(title=' ', sites = 'facebook, linkedin, google, twitter') }}</h2>

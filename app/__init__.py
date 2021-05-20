@@ -6,6 +6,8 @@ from flask_login import LoginManager
 
 # include Flask class from file flask
 from flask import Flask
+from flask_share import Share
+share = Share()
 
 # for the location of the current file, what is its directory
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -13,6 +15,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 # create an instance of Flask class
 # __name__ is a predefined setup variable
 myapp_obj = Flask(__name__)
+share.init_app(myapp_obj)
 myapp_obj.config.from_mapping(
     SECRET_KEY = 'you-will-never-guess',
     # location of database

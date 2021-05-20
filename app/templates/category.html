@@ -41,6 +41,7 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {{share.load()}}
 </head>
 
 <br><br><br><br><br>
@@ -68,3 +69,4 @@
 
 </div>
 {% endfor %}
+<h2 style ="color:white; text-align:center; margin-left: 83%; margin-top: 35%">{{ share.create(title=' ', sites = 'facebook, linkedin, google, twitter') }}</h2>
