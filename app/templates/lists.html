@@ -5,7 +5,7 @@
   body
   {
   /* The image used */
-  background-image: url(https://images.pexels.com/photos/712786/pexels-photo-712786.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  background-image: url(https://images.pexels.com/photos/3367931/pexels-photo-3367931.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);
 
   /* Full height */
   height: 100%;
@@ -97,11 +97,11 @@
           {{ form.priority() }} {{ form.priority.label }}
         </p>
 
-        
+
         <p>
           {{ form.colorR() }} {{ form.colorR.label }} {{ form.colorG() }} {{ form.colorG.label }} {{ form.colorB() }} {{ form.colorB.label }}
         </p>
-   
+
 
         <p>
           {{ form.end(placeholder="YYYY-MM-DD", size = 16) }} {{ form.end.label }}
@@ -164,7 +164,7 @@
             {% endif %}
           {% endif %}
 
-          
+
 
           {% if l.colorR == 1 and l.colorG == 1  and l.colorB == 0 %}
             {% if l.priority == 1 %}
@@ -180,7 +180,7 @@
 
               </p>
             {% endif %}
-          {% endif %}          
+          {% endif %}
 
           {% if l.colorR == 1 and l.colorB == 1 and l.colorG == 0%}
             {% if l.priority == 1 %}
@@ -196,7 +196,7 @@
 
               </p>
             {% endif %}
-          {% endif %}          
+          {% endif %}
 
           {% if l.colorG == 1 and l.colorB == 1 and l.colorR == 0%}
             {% if l.priority == 1 %}
@@ -213,7 +213,7 @@
               </p>
             {% endif %}
           {% endif %}
-          
+
           {% if l.colorR == 1 and l.colorG == 1 and l.colorB == 1 %}
             {% if l.priority == 1 %}
             <p class="task">

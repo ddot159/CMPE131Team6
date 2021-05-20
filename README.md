@@ -39,7 +39,7 @@ After following the installation steps, you will find yourself on the login page
 
 ### Register User
 
-As mentioned above, the first step to using Taskr is to create a new user using the register link at the bottom of the login page. This will let you access the site. 
+As mentioned above, the first step to using Taskr is to create a new user using the register link at the bottom of the login page. This will let you access the site.
 
 
 
@@ -47,13 +47,13 @@ As mentioned above, the first step to using Taskr is to create a new user using 
 
 Once a user is registered, they can enter their credentials into the login page and gain access to the Taskr homepage! The homepage should greet you with a Hi User message!
 
-Once the user is ready to leave the site, they can logout by simply pressing the logout button at the right of the Navbar at the top of the page. 
+Once the user is ready to leave the site, they can logout by simply pressing the logout button at the right of the Navbar at the top of the page.
 
 
 
-### Add List
+### Add Category
 
-To add a list, the user can simply click the "Lists" button on the navbar at the top of the screen. The user will then be prompted to enter the name of the new list and click "Add List" and the list will be created. The list that is created will link to the task list page associated with it.
+To add a list/Category, the user can simply click the "Tasks" button on the navbar at the top of the screen. The user will then be prompted to enter the name of the new task and also the category, when the user clicks "Add Task" and the category will be created which can be viewed by clicking on the "Categories" option of the dropdown menu on the navbar.
 
 
 
@@ -63,9 +63,38 @@ To add a task, the user can click the dropdown menu on the navbar which will tak
 
 
 
+### Delete Task
+
+A delete button is available to the user on the Task Page, when clicked, it results in the task getting deleted from the list. Before deleting the task, the website shows a confirmation pop-up asking the users if they want to continue and performs the deletion based on their answer.
+
+
+### Assigning Dates
+
+The user while adding a task has an option to add a deadline to it, and this deadline can be viewed using the inbox option of our web application.  
+
+
+
 ### Navbar
 
 The navbar is visible and usable throughout the site, and can help the user navigate to different pages and logout of their account. The navbar can be seen in the top portion of the screen and has a home button, a lists button, a dropdown menu with some placeholders, and a logout button.
+
+
+
+### Viewing Function
+
+We have enabled an option "Categories" for the user to view the different categories and the tasks assigned to each category. This option is located inside the dropdown-menu of the Navbar.
+
+
+
+### Edit Tasks/Categories
+
+Similar to the delete button on the Tasks Page, we have also created an edits button for the user to change the task name, its category or deadline. When clicked it redirects to an Edits Page where three input fields- New Task, New Category, New Deadline are present, out of which only New Deadline field is a required field.
+
+
+
+### Mobile Version
+
+For enabling a mobile version, we just added the required meta tag to the all the user-accessed html files. We have also provided instructions on how to run it on your mobile server in run.py file.
 
 
 
@@ -75,12 +104,24 @@ The inbox lists the tasks that were added from the task page. It has a refresh b
 
 
 
+### Mark Completion
+
+Marking completion of a task is what every user needs in a todo-app like Taskr. Basically, the user clicks on the Mark Completion option which is located on the Tasks Page and it turns green indicating the task has been achieved, but if the user mistakenly clicks on it, he/she has an option to unmark again by clicking on it again.
+
+
+
 ### Priority Markers
 
-When creating a task, the user has the ability to check the "Priority" box which will add two asterisks around the task, signifying it's priority. 
+When creating a task, the user has the ability to check the "Priority" box which will add two asterisks around the task, signifying it's priority.
 
 
 
 ### Color Formatting for Task
 
 When creating a task, the user has the ability to choose whether they want their task to be listed in red, green, blue or any combination of the colors! It is as simple as checking the box or boxes next to the colors they want.
+
+
+
+### Delete account
+
+If the users feel the need to delete their account because of any reason, they always have an option to do that in the dropdown menu of the navbar, using this option results in the website showing a confirmation pop-up which briefly explains the outcome of proceeding. If they wish to proceed with the action, their data/credentials get deleted from the website's database and they are no longer a valid user. 
